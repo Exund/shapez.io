@@ -106,7 +106,7 @@ export class HUDShapeViewer extends BaseHUDPart {
                         quadElem,
                         null,
                         ["colorLabel"],
-                        T.ingame.colors[contents.color]
+                        T.ingame.colors[contents.color] || contents.color
                     );
                 } else {
                     const emptyLabelElem = makeDiv(
