@@ -22,6 +22,9 @@ module.exports = ({ watch = false, standalone = false }) => {
                 "global-compression": path.resolve(__dirname, "..", "src", "js", "core", "lzstring.js"),
             },
         },
+        watchOptions: {
+            poll: 1000
+        },
         context: path.resolve(__dirname, ".."),
         plugins: [
             new webpack.DefinePlugin({

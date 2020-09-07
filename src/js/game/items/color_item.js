@@ -37,7 +37,7 @@ export class ColorItem extends BaseItem {
     }
 
     /**
-     * @param {enumColors} color
+     * @param {enumColors | string} color
      */
     constructor(color) {
         super();
@@ -46,7 +46,7 @@ export class ColorItem extends BaseItem {
     }
 
     getBackgroundColorAsResource() {
-        return THEME.map.resources[this.color];
+        return THEME.map.resources[this.color] || this.color;
     }
 
     /**
@@ -95,7 +95,7 @@ export class ColorItem extends BaseItem {
         context.translate((w * dpi) / 2, (h * dpi) / 2);
         context.scale((dpi * w) / 12, (dpi * h) / 12);
 
-        context.fillStyle = enumColorsToHexCode[this.color];
+        context.fillStyle = enumColorsToHexCode[this.color] || this.color;
         context.strokeStyle = THEME.items.outline;
         context.lineWidth = 2 * THEME.items.outlineWidth;
         context.beginCircle(2, -1, 3);

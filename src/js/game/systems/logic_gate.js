@@ -201,7 +201,7 @@ export class LogicGateSystem extends GameSystemWithFilter {
         });
 
         return [
-            COLOR_ITEM_SINGLETONS[topRightContent.color],
+            COLOR_ITEM_SINGLETONS[topRightContent.color] || new ColorItem(topRightContent.color),
             this.root.shapeDefinitionMgr.getShapeItemFromDefinition(newDefinition),
         ];
     }

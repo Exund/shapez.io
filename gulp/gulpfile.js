@@ -163,7 +163,7 @@ function serve({ standalone }) {
     });
 
     // Watch .scss files, those trigger a css rebuild
-    gulp.watch(["../src/**/*.scss"], gulp.series("css.dev"));
+    gulp.watch(["../src/**/*.scss"], {usePolling: true} , gulp.series("css.dev"));
 
     // Watch .html files, those trigger a html rebuild
     gulp.watch("../src/**/*.html", gulp.series(standalone ? "html.standalone-dev" : "html.dev"));

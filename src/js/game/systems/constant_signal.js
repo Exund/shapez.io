@@ -7,7 +7,7 @@ import { ConstantSignalComponent } from "../components/constant_signal";
 import { Entity } from "../entity";
 import { GameSystemWithFilter } from "../game_system_with_filter";
 import { BOOL_FALSE_SINGLETON, BOOL_TRUE_SINGLETON } from "../items/boolean_item";
-import { COLOR_ITEM_SINGLETONS } from "../items/color_item";
+import { COLOR_ITEM_SINGLETONS, ColorItem } from "../items/color_item";
 import { ShapeDefinition } from "../shape_definition";
 
 export class ConstantSignalSystem extends GameSystemWithFilter {
@@ -115,8 +115,8 @@ export class ConstantSignalSystem extends GameSystemWithFilter {
         code = trim(code);
         const codeLower = code.toLowerCase();
 
-        if (enumColors[codeLower]) {
-            return COLOR_ITEM_SINGLETONS[codeLower];
+        if (enumColors[codeLower] || codeLower.match(/#[0-9a-f]{6}/)) {
+            return COLOR_ITEM_SINGLETONS[codeLower] || new ColorItem(codeLower);
         }
         if (code === "1" || codeLower === "true") {
             return BOOL_TRUE_SINGLETON;

@@ -6,7 +6,7 @@ import { Vector } from "../core/vector";
 import { BaseItem } from "./base_item";
 import { enumColors } from "./colors";
 import { Entity } from "./entity";
-import { COLOR_ITEM_SINGLETONS } from "./items/color_item";
+import { COLOR_ITEM_SINGLETONS, ColorItem } from "./items/color_item";
 import { GameRoot } from "./root";
 import { enumSubShape } from "./shape_definition";
 import { Rectangle } from "../core/rectangle";
@@ -169,7 +169,11 @@ export class MapChunk {
         if (distanceToOriginInChunks > 2) {
             availableColors.push(enumColors.blue);
         }
-        this.internalGeneratePatch(rng, colorPatchSize, COLOR_ITEM_SINGLETONS[rng.choice(availableColors)]);
+        if (distanceToOriginInChunks > 10) {
+            availableColors.push("random");
+        }
+        const choice = rng.choice(availableColors);
+        this.internalGeneratePatch(rng, colorPatchSize, choice == "random" ? new ColorItem("#" + rng.nextIntRangeInclusive(0, 0xffffff).toString(16)) : COLOR_ITEM_SINGLETONS[choice]);
     }
 
     /**

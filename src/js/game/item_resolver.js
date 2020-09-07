@@ -21,7 +21,7 @@ export function itemResolverSingleton(root, data) {
             return root.shapeDefinitionMgr.getShapeItemFromShortKey(itemData);
         }
         case ColorItem.getId(): {
-            return COLOR_ITEM_SINGLETONS[itemData];
+            return COLOR_ITEM_SINGLETONS[itemData] || new ColorItem(itemData);
         }
 
         default: {

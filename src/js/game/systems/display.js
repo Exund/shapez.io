@@ -1,5 +1,6 @@
 import { globalConfig } from "../../core/config";
 import { Loader } from "../../core/loader";
+import { makeOffscreenBuffer } from "../../core/buffer_utils";
 import { BaseItem } from "../base_item";
 import { enumColors } from "../colors";
 import { DisplayComponent } from "../components/display";
@@ -8,12 +9,19 @@ import { isTrueItem } from "../items/boolean_item";
 import { ColorItem, COLOR_ITEM_SINGLETONS } from "../items/color_item";
 import { MapChunkView } from "../map_chunk_view";
 
+const colorCanvasSize = 65;
+const colorCanvasMargin = 3;
+const colorCanvasRadius = 3;
+
 export class DisplaySystem extends GameSystemWithFilter {
     constructor(root) {
         super(root, [DisplayComponent]);
 
         /** @type {Object<string, import("../../core/draw_utils").AtlasSprite>} */
         this.displaySprites = {};
+
+        /** @type {Object<string, HTMLCanvasElement>} */
+        this.cachedCanvases = {};
 
         for (const colorId in enumColors) {
             if (colorId === enumColors.uncolored) {
@@ -77,12 +85,31 @@ export class DisplaySystem extends GameSystemWithFilter {
 
                 const origin = entity.components.StaticMapEntity.origin;
                 if (value.getItemType() === "color") {
-                    this.displaySprites[/** @type {ColorItem} */ (value).color].drawCachedCentered(
-                        parameters,
-                        (origin.x + 0.5) * globalConfig.tileSize,
-                        (origin.y + 0.5) * globalConfig.tileSize,
-                        globalConfig.tileSize
-                    );
+                    const size = globalConfig.tileSize;
+                    
+
+                    const color = /** @type {ColorItem} */ (value).color;
+                    const sprite = this.displaySprites[color];
+                    if(sprite) {
+                        sprite.drawCachedCentered(
+                            parameters,
+                            (origin.x + 0.5) * size,
+                            (origin.y + 0.5) * size,
+                            size
+                        );
+                        continue;
+                    }
+                    
+                    let canvas = this.cachedCanvases[color];
+                    if(!canvas) {
+                        canvas = this.generateColorCanvas(color);
+                        this.cachedCanvases[color] = canvas;
+                    }
+
+                    const x = (origin.x + 0.5) * size - size / 2;
+                    const y = (origin.y + 0.5) * size - size / 2;
+
+                    parameters.context.drawImage(canvas, x, y, size, size);
                 } else if (value.getItemType() === "shape") {
                     value.drawItemCenteredClipped(
                         (origin.x + 0.5) * globalConfig.tileSize,
@@ -93,5 +120,33 @@ export class DisplaySystem extends GameSystemWithFilter {
                 }
             }
         }
+    }
+
+    /**
+     * Generates a canvas for a specific color
+     * @param {string} color 
+     * @returns {HTMLCanvasElement}
+     */
+    generateColorCanvas(color) {
+        const [canvas, context] = makeOffscreenBuffer(colorCanvasSize, colorCanvasSize, {
+            reusable: true,
+            label: "buffer-display/" + color,
+            smooth: true
+        });
+
+        const rectSize = colorCanvasSize - colorCanvasMargin * 2;
+
+        context.fillStyle = color;
+        context.beginRoundedRect(
+            colorCanvasMargin,
+            colorCanvasMargin,
+            rectSize,
+            rectSize,
+            colorCanvasRadius);
+        context.fill();
+
+        //ALT : draw square and set corners alpha to 108
+
+        return canvas;
     }
 }

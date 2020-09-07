@@ -123,11 +123,11 @@ export class ShapeDefinition extends BasicSerializableObject {
         let layers = [];
         for (let i = 0; i < sourceLayers.length; ++i) {
             const text = sourceLayers[i];
-            assert(text.length === 8, "Invalid shape short key: " + key);
+            //assert(text.length === 8, "Invalid shape short key: " + key);
 
             /** @type {ShapeLayer} */
             const quads = [null, null, null, null];
-            for (let quad = 0; quad < 4; ++quad) {
+            /* for (let quad = 0; quad < 4; ++quad) {
                 const shapeText = text[quad * 2 + 0];
                 const subShape = enumShortcodeToSubShape[shapeText];
                 const color = enumShortcodeToColor[text[quad * 2 + 1]];
@@ -140,7 +140,32 @@ export class ShapeDefinition extends BasicSerializableObject {
                 } else if (shapeText !== "-") {
                     assert(false, "Invalid shape key: " + shapeText);
                 }
-            }
+            } */
+            
+            let quadindex = 0;
+            let cursor = 0;
+            do {
+                let shapeText = text[cursor];
+                let subShape = enumShortcodeToSubShape[shapeText];
+                let color;
+                if(text[++cursor] === "#") {
+                    color = text.substr(cursor, 7);
+                    cursor += 7;
+                } else {
+                    color = enumColorsToHexCode[enumShortcodeToColor[text[cursor]]];
+                    ++cursor;
+                }
+                if (subShape) {
+                    assert(color, "Invalid shape short key:", key);
+                    quads[quadindex] = {
+                        subShape,
+                        color,
+                    };
+                    quadindex++;
+                } else if (shapeText !== "-") {
+                    assert(false, "Invalid shape key:", shapeText, key);
+                }
+            } while(cursor < text.length)
             layers.push(quads);
         }
 
@@ -176,14 +201,14 @@ export class ShapeDefinition extends BasicSerializableObject {
         let layers = [];
         for (let i = 0; i < sourceLayers.length; ++i) {
             const text = sourceLayers[i];
-            if (text.length !== 8) {
+            /*if (text.length !== 8) {
                 return false;
-            }
+            }*/
 
             /** @type {ShapeLayer} */
             const quads = [null, null, null, null];
             let anyFilled = false;
-            for (let quad = 0; quad < 4; ++quad) {
+            /*for (let quad = 0; quad < 4; ++quad) {
                 const shapeText = text[quad * 2 + 0];
                 const colorText = text[quad * 2 + 1];
                 const subShape = enumShortcodeToSubShape[shapeText];
@@ -209,7 +234,38 @@ export class ShapeDefinition extends BasicSerializableObject {
                     // Invalid shape key
                     return false;
                 }
-            }
+            }*/
+            let quadindex = 0;
+            let cursor = 0;
+            do {
+                let shapeText = text[cursor];
+                let subShape = enumShortcodeToSubShape[shapeText];
+                let color;
+                if(text[++cursor] === "#") {
+                    color = text.substr(cursor, 7);
+                    cursor += 7;
+                } else {
+                    color = enumColorsToHexCode[enumShortcodeToColor[text[cursor]]];
+                    ++cursor;
+                }
+                if (subShape) {
+                    if(!color) {
+                        return false;
+                    }
+                    quads[quadindex] = {
+                        subShape,
+                        color,
+                    };
+                    quadindex++;
+                    anyFilled = true;
+                } else if (shapeText === "-") {
+                    if (text[cursor - 1] !== "-") {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            } while(cursor < text.length)
 
             if (!anyFilled) {
                 // Empty layer
@@ -257,7 +313,7 @@ export class ShapeDefinition extends BasicSerializableObject {
             for (let quadrant = 0; quadrant < layer.length; ++quadrant) {
                 const item = layer[quadrant];
                 if (item) {
-                    id += enumSubShapeToShortcode[item.subShape] + enumColorToShortcode[item.color];
+                    id += enumSubShapeToShortcode[item.subShape] + (enumColorsToHexCode[item.color] || item.color);
                 } else {
                     id += "--";
                 }
@@ -353,7 +409,7 @@ export class ShapeDefinition extends BasicSerializableObject {
                 context.translate(centerQuadrantX, centerQuadrantY);
                 context.rotate(rotation);
 
-                context.fillStyle = enumColorsToHexCode[color];
+                context.fillStyle = enumColorsToHexCode[color] || color;
                 context.strokeStyle = THEME.items.outline;
                 context.lineWidth = THEME.items.outlineWidth;
 
