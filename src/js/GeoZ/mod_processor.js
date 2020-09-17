@@ -11,40 +11,40 @@ import { BaseItem } from "../game/base_item";
  *   outItems: Array<{item: BaseItem, requiredSlot?: number, preferredSlot?: number}>,
  *   system: ItemProcessorSystem
  * }} ProcessorParameters
-*/
+ */
 
 export class ModProcessor {
-	/**
-	 * @returns {String}
-	 */
-	static getType() {
-		return this.prototype.constructor.name;
-	}
+    /**
+     * @returns {String}
+     */
+    static getType() {
+        return this.prototype.constructor.name;
+    }
 
-	/**
-	 * @returns {Number}
-	 */
-	static getBaseSpeed() {
-		abstract;
-		return 0;
-	}
+    /**
+     * @returns {Number}
+     */
+    static getBaseSpeed() {
+        abstract;
+        return 0;
+    }
 
-	/**
+    /**
      * Checks whether it's possible to process something
      * @param {Entity} entity
-	 * @returns {Boolean}
+     * @returns {Boolean}
      */
-	static canProcess(entity) {
-		return true;
-	}
+    static canProcess(entity) {
+        return true;
+    }
 
-	/**
-	 * Process ther current item
-	 * @param {ProcessorParameters} param0 
-	 * @returns {Boolean} Whether to track the production towards the analytics
-	 */
-	static process({}) {
-		abstract;
-		return false;
-	}
+    /**
+     * Process ther current item
+     * @param {ProcessorParameters} param0
+     * @returns {Boolean} Whether to track the production towards the analytics
+     */
+    static process({ items, itemsBySlot, itemsRaw, entity, outItems, system }) {
+        abstract;
+        return false;
+    }
 }

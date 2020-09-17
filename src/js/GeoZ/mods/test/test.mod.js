@@ -262,19 +262,19 @@ for (const v of MetaInvertedGatesBuilding.getVariants()) {
 class SquareConverter extends ModProcessor {
     /**
      * @returns {Number}
-	 */
-	static getBaseSpeed() {
-		return 0.5;
-	}
+     */
+    static getBaseSpeed() {
+        return 0.5;
+    }
 
-	/**
-	 * Process ther current item
-	 * @param {ProcessorParameters} param0 
-	 * @returns {Boolean} Whether to track the production towards the analytics
-	 */
-	static process({ outItems }) {
-		outItems.push({ item: new ShapeItem(ShapeDefinition.fromShortKey("SuSuSuSu")) });
-		return true;
+    /**
+     * Process ther current item
+     * @param {ProcessorParameters} param0
+     * @returns {Boolean} Whether to track the production towards the analytics
+     */
+    static process({ outItems }) {
+        outItems.push({ item: new ShapeItem(ShapeDefinition.fromShortKey("SuSuSuSu")) });
+        return true;
     }
 }
 
