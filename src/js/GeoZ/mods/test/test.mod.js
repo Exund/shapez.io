@@ -14,6 +14,7 @@ import { BOOL_FALSE_SINGLETON, BOOL_TRUE_SINGLETON, isTruthyItem } from "../../.
 import { enumPinSlotType, WiredPinsComponent } from "../../../game/components/wired_pins";
 import { LogicGateComponent } from "../../../game/components/logic_gate";
 import { defaultBuildingVariant } from "../../../game/meta_building";
+import { MetaModBuildingVariant } from "../../mod_building";
 
 class MetaTestBuilding extends GeoZ.MetaModBuilding {
     static getId() {
@@ -24,18 +25,9 @@ class MetaTestBuilding extends GeoZ.MetaModBuilding {
         return "0";
     }
 
-    static getTranslations() {
-        return {
-            variants: {
-                default: {
-                    name: "Test",
-                    description: "Test GeoZ building",
-                },
-            },
-            keybinding: "Test",
-        };
+    static getKeybindingTranslation() {
+        return "Test";
     }
-
     constructor() {
         super("test");
     }
@@ -44,29 +36,12 @@ class MetaTestBuilding extends GeoZ.MetaModBuilding {
         return "#ff00ff";
     }
 
-    getDimensions() {
-        return new Vector(1, 1);
+    getAvailableVariants() {
+        return [DefaultTestVariant];
     }
 
-    /**
-     * @returns {import("../../mod_building").BuildingSpriteMetas}
-     */
-    getSpriteMetas() {
-        const normal = {
-            url:
-                "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/wires/boolean_false.png",
-            width: 64,
-            height: 64,
-        };
-
-        return {
-            default: [
-                {
-                    normal,
-                    blueprint: normal,
-                },
-            ],
-        };
+    static getVariants() {
+        return [DefaultTestVariant];
     }
 
     /**
@@ -100,6 +75,35 @@ class MetaTestBuilding extends GeoZ.MetaModBuilding {
     }
 }
 
+class DefaultTestVariant extends MetaModBuildingVariant {
+    static getId() {
+        return defaultBuildingVariant;
+    }
+
+    static getSpriteMetas() {
+        const normal = {
+            url:
+                "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/wires/boolean_false.png",
+            width: 64,
+            height: 64,
+        };
+
+        return [
+            {
+                normal,
+                blueprint: normal,
+            },
+        ];
+    }
+
+    static getTranslations() {
+        return {
+            name: "Test",
+            description: "Test GeoZ building",
+        };
+    }
+}
+
 class MetaInvertedGatesBuilding extends GeoZ.MetaModBuilding {
     static getId() {
         return "NANDGate";
@@ -109,28 +113,12 @@ class MetaInvertedGatesBuilding extends GeoZ.MetaModBuilding {
         return "0";
     }
 
-    static getTranslations() {
-        return {
-            variants: {
-                default: {
-                    name: "NAND Gate",
-                    description: "Test GeoZ building for custom wire processor",
-                },
-                NORGate: {
-                    name: "NOR Gate",
-                    description: "Test GeoZ building for custom wire processor",
-                },
-                XNORGate: {
-                    name: "XNOR Gate",
-                    description: "Test GeoZ building for custom wire processor",
-                },
-            },
-            keybinding: "NAND Gate",
-        };
+    static getKeybindingTranslation() {
+        return "NAND Gate";
     }
 
     static getVariants() {
-        return ["NORGate", "XNORGate"];
+        return [NANDGateVariant, NORGateVariant, XNORGateVariant];
     }
 
     constructor() {
@@ -141,12 +129,8 @@ class MetaInvertedGatesBuilding extends GeoZ.MetaModBuilding {
         return "#89dc60";
     }
 
-    getDimensions() {
-        return new Vector(1, 1);
-    }
-
     getAvailableVariants() {
-        return [...super.getAvailableVariants(null), ...MetaInvertedGatesBuilding.getVariants()];
+        return [NANDGateVariant, NORGateVariant, XNORGateVariant];
     }
 
     /**
@@ -154,70 +138,6 @@ class MetaInvertedGatesBuilding extends GeoZ.MetaModBuilding {
      */
     getLayer() {
         return "wires";
-    }
-
-    /**
-     * @returns {import("../../mod_building").BuildingSpriteMetas}
-     */
-    getSpriteMetas() {
-        return {
-            default: [
-                {
-                    normal: {
-                        url:
-                            "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/buildings/logic_gate.png",
-                        width: 192,
-                        height: 192,
-                    },
-                    blueprint: {
-                        url:
-                            "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/blueprints/logic_gate.png",
-                        width: 192,
-                        height: 192,
-                    },
-                },
-            ],
-            NORGate: [
-                {
-                    normal: {
-                        url:
-                            "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/buildings/logic_gate-or.png",
-                        width: 192,
-                        height: 192,
-                    },
-                    blueprint: {
-                        url:
-                            "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/blueprints/logic_gate-or.png",
-                        width: 192,
-                        height: 192,
-                    },
-                },
-            ],
-            XNORGate: [
-                {
-                    normal: {
-                        url:
-                            "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/buildings/logic_gate-xor.png",
-                        width: 192,
-                        height: 192,
-                    },
-                    blueprint: {
-                        url:
-                            "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/blueprints/logic_gate-xor.png",
-                        width: 192,
-                        height: 192,
-                    },
-                },
-            ],
-        };
-    }
-
-    /**
-     * @param {Entity} entity
-     * @param {string} variant
-     */
-    updateVariants(entity, rotationVariant, variant) {
-        entity.components.LogicGate.type = enumInvertedGatesVariants[variant];
     }
 
     /**
@@ -251,12 +171,107 @@ class MetaInvertedGatesBuilding extends GeoZ.MetaModBuilding {
     }
 }
 
-const enumInvertedGatesVariants = {
-    [defaultBuildingVariant]: "NANDGate",
-};
+class NANDGateVariant extends MetaModBuildingVariant {
+    static getId() {
+        return defaultBuildingVariant;
+    }
 
-for (const v of MetaInvertedGatesBuilding.getVariants()) {
-    enumInvertedGatesVariants[v] = v;
+    static getTranslations() {
+        return {
+            name: "NAND Gate",
+            description: "Test GeoZ building for custom wire processor",
+        };
+    }
+
+    static getSpriteMetas() {
+        return [
+            {
+                normal: {
+                    url:
+                        "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/buildings/logic_gate.png",
+                    width: 192,
+                    height: 192,
+                },
+                blueprint: {
+                    url:
+                        "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/blueprints/logic_gate.png",
+                    width: 192,
+                    height: 192,
+                },
+            },
+        ];
+    }
+
+    /**
+     * @param {Entity} entity
+     */
+    static updateEntityComponents(entity) {
+        entity.components.LogicGate.type = enumVariantToGate[this.getId()];
+    }
+}
+
+class NORGateVariant extends NANDGateVariant {
+    static getId() {
+        return enumInvertedGatesVariants.nor;
+    }
+
+    static getTranslations() {
+        return {
+            name: "NOR Gate",
+            description: "Test GeoZ building for custom wire processor",
+        };
+    }
+
+    static getSpriteMetas() {
+        return [
+            {
+                normal: {
+                    url:
+                        "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/buildings/logic_gate-or.png",
+                    width: 192,
+                    height: 192,
+                },
+                blueprint: {
+                    url:
+                        "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/blueprints/logic_gate-or.png",
+                    width: 192,
+                    height: 192,
+                },
+            },
+        ];
+    }
+}
+
+class XNORGateVariant extends NANDGateVariant {
+    static getId() {
+        return enumInvertedGatesVariants.xnor;
+    }
+
+    static getTranslations() {
+        return {
+            name: "XNOR Gate",
+            description: "Test GeoZ building for custom wire processor",
+        };
+    }
+
+    static getSpriteMetas() {
+        return [
+            {
+                normal: {
+                    url:
+                        "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/buildings/logic_gate-xor.png",
+                    width: 192,
+                    height: 192,
+                },
+                blueprint: {
+                    url:
+                        "https://raw.githubusercontent.com/Exund/shapez.io/master/res_raw/sprites/blueprints/logic_gate-xor.png",
+                    width: 192,
+                    height: 192,
+                },
+            },
+        ];
+    }
 }
 
 class SquareConverter extends ModProcessor {
@@ -319,6 +334,18 @@ class XNORGate extends ModWireProcessor {
             : BOOL_TRUE_SINGLETON;
     }
 }
+
+const enumInvertedGatesVariants = {
+    nor: "nor",
+    xnor: "xnor",
+};
+
+/** @enum {string} */
+export const enumVariantToGate = {
+    [defaultBuildingVariant]: NANDGate.getType(),
+    [enumInvertedGatesVariants.nor]: NORGate.getType(),
+    [enumInvertedGatesVariants.xnor]: XNORGate.getType(),
+};
 
 class VirtualStacker extends ModWireProcessor {
     /**

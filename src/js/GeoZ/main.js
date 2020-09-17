@@ -14,10 +14,11 @@ import { GameCore } from "../game/core";
 import { createLogger } from "../core/logging";
 import { registerBuildingVariant } from "../game/building_codes";
 import { supportedBuildings } from "../game/hud/parts/buildings_toolbar";
-import { KEYMAPPINGS, key } from "../game/key_action_mapper";
+import { KEYMAPPINGS } from "../game/key_action_mapper";
 import { T } from "../translations";
 import { ShapeData, allShapeData, initShapes } from "../game/shapes";
 import { globalConfig } from "../core/config";
+import { defaultBuildingVariant } from "../game/meta_building";
 
 export { MetaModBuilding } from "./mod_building";
 export { ModComponent } from "./mod_component";
@@ -180,27 +181,29 @@ export async function initMods() {
                 ModBuildings.push(building);
                 gMetaBuildingRegistry.register(building);
                 const base_id = building.getId();
-                registerBuildingVariant(base_id, building);
-
-                for (const variant of building.getVariants()) {
-                    registerBuildingVariant(`${base_id}-${variant}`, building, variant);
-                }
-
-                supportedBuildings.push(building);
+                registerBuildingVariant(
+                    base_id,
+                    building,
+                    building.getVariants().find(bv => bv.getId() === defaultBuildingVariant)
+                );
 
                 KEYMAPPINGS.buildings[base_id] = {
                     keyCode: keyCodeOf(building.getKeybinding()),
                     id: base_id,
                 };
 
-                const translations = building.getTranslations();
+                const translations = building.getKeybindingTranslation();
 
-                T.keybindings.mappings[base_id] = translations.keybinding;
+                T.keybindings.mappings[base_id] = building.getKeybindingTranslation();
 
                 T.buildings[base_id] = {};
-                for (const variant in translations.variants) {
-                    T.buildings[base_id][variant] = translations.variants[variant];
+
+                for (const variant of building.getVariants()) {
+                    registerBuildingVariant(`${base_id}-${variant}`, building, variant);
+                    T.buildings[base_id][variant.getId()] = variant.getTranslations();
                 }
+
+                supportedBuildings.push(building);
             }
         }
 
