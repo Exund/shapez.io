@@ -5,6 +5,7 @@ const webpack = require("webpack");
 const { getRevision, getVersion, getAllResourceImages } = require("./buildutils");
 const lzString = require("lz-string");
 const CircularDependencyPlugin = require("circular-dependency-plugin");
+const os = require("os");
 
 module.exports = ({ watch = false, standalone = false }) => {
     return {
@@ -14,6 +15,12 @@ module.exports = ({ watch = false, standalone = false }) => {
             "bundle.js": [path.resolve(__dirname, "../src/js/main.js")],
         },
         watch,
+        watchOptions:
+            os.platform() === "linux" && os.release().toLowerCase().includes("microsoft")
+                ? {
+                      poll: 1000,
+                  }
+                : null,
         node: {
             fs: "empty",
         },

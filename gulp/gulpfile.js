@@ -7,6 +7,8 @@ const browserSync = require("browser-sync").create({});
 const path = require("path");
 const deleteEmpty = require("delete-empty");
 const execSync = require("child_process").execSync;
+const os = require("os");
+const isWSL = os.platform() === "linux" && os.release().toLowerCase().includes("microsoft");
 
 const lfsOutput = execSync("git lfs install", { encoding: "utf-8" });
 if (!lfsOutput.toLowerCase().includes("git lfs initialized")) {
@@ -163,7 +165,7 @@ function serve({ standalone }) {
     });
 
     // Watch .scss files, those trigger a css rebuild
-    gulp.watch(["../src/**/*.scss"], gulp.series("css.dev"));
+    gulp.watch(["../src/**/*.scss"], { usePolling: isWSL }, gulp.series("css.dev"));
 
     // Watch .html files, those trigger a html rebuild
     gulp.watch("../src/**/*.html", gulp.series(standalone ? "html.standalone-dev" : "html.dev"));
@@ -172,7 +174,7 @@ function serve({ standalone }) {
     // gulp.watch(["../res_raw/sounds/**/*.mp3", "../res_raw/sounds/**/*.wav"], gulp.series("sounds.dev"));
 
     // Watch translations
-    gulp.watch("../translations/**/*.yaml", gulp.series("translations.convertToJson"));
+    gulp.watch("../translations/**/*.yaml", { usePolling: isWSL }, gulp.series("translations.convertToJson"));
 
     gulp.watch(
         ["../res_raw/sounds/sfx/*.mp3", "../res_raw/sounds/sfx/*.wav"],
