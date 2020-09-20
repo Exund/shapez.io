@@ -66,6 +66,12 @@ export class ItemProcessorSystem extends GameSystemWithFilter {
         for (const key in this.handlers) {
             this.handlers[key] = this.handlers[key].bind(this);
         }
+
+        const ModProcessors = require("../../GeoZ/main").ModProcessors;
+
+        for (const key in ModProcessors) {
+            this.handlers[key] = ModProcessors[key].process;
+        }
     }
 
     update() {
@@ -270,12 +276,8 @@ export class ItemProcessorSystem extends GameSystemWithFilter {
         /** @type {Array<ProducedItem>} */
         const outItems = [];
 
-        const ModProcessors = require("../../GeoZ/main").ModProcessors;
-
         /** @type {function(ProcessorImplementationPayload) : void} */
-        const handler =
-            this.handlers[processorComp.type] ||
-            (ModProcessors[processorComp.type] && ModProcessors[processorComp.type].process);
+        const handler = this.handlers[processorComp.type];
         assert(handler, "No handler for processor type defined: " + processorComp.type);
 
         // Call implementation
