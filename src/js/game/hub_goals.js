@@ -398,15 +398,11 @@ export class HubGoals extends BasicSerializableObject {
      */
     getProcessorBaseSpeed(processorType) {
         switch (processorType) {
-            case enumItemProcessorTypes.splitterWires:
-                return globalConfig.wiresSpeedItemsPerSecond * 2;
-
             case enumItemProcessorTypes.trash:
             case enumItemProcessorTypes.hub:
                 return 1e30;
             case enumItemProcessorTypes.splitter:
                 return globalConfig.beltSpeedItemsPerSecond * this.upgradeImprovements.belt * 2;
-            case enumItemProcessorTypes.filter:
             case enumItemProcessorTypes.reader:
                 return globalConfig.beltSpeedItemsPerSecond * this.upgradeImprovements.belt;
 
@@ -429,7 +425,7 @@ export class HubGoals extends BasicSerializableObject {
             case enumItemProcessorTypes.cutterQuad:
             case enumItemProcessorTypes.rotater:
             case enumItemProcessorTypes.rotaterCCW:
-            case enumItemProcessorTypes.rotaterFL:
+            case enumItemProcessorTypes.rotater180:
             case enumItemProcessorTypes.stacker: {
                 assert(
                     globalConfig.buildingSpeeds[processorType],

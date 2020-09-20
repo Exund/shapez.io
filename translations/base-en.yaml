@@ -191,7 +191,9 @@ dialogs:
     confirmSavegameDelete:
         title: Confirm deletion
         text: >-
-            Are you sure you want to delete the game?
+            Are you sure you want to delete the following game?<br><br>
+            '<savegameName>' at level <savegameLevel><br><br>
+            This can not be undone!
 
     savegameDeletionError:
         title: Failed to delete
@@ -378,7 +380,10 @@ ingame:
         noShapesProduced: No shapes have been produced so far.
 
         # Displays the shapes per second, e.g. '523 / s'
-        shapesPerSecond: <shapes> / s
+        shapesDisplayUnits:
+            second: <shapes> / s
+            minute: <shapes> / m
+            hour: <shapes> / h
 
     # Settings menu, when you press "ESC"
     settingsMenu:
@@ -390,7 +395,7 @@ ingame:
         buttons:
             continue: Continue
             settings: Settings
-            menu: Return to menu
+            menu: Menu
 
     # Bottom left tutorial hints
     tutorialHints:
@@ -516,7 +521,7 @@ buildings:
         ccw:
             name: Rotate (CCW)
             description: Rotates shapes counter-clockwise by 90 degrees.
-        fl:
+        rotate180:
             name: Rotate (180)
             description: Rotates shapes by 180 degrees.
 
@@ -636,6 +641,14 @@ buildings:
         shapecompare:
             name: Compare
             description: Returns true if both items are exactly equal. Can compare shapes, items and booleans.
+
+        stacker:
+            name: Virtual Stacker
+            description: Virtually stacks the right shape onto the left.
+
+        painter:
+            name: Virtual Painter
+            description: Virtually paints the shape from the bottom input with the shape on the right input.
 
 storyRewards:
     # Those are the rewards gained from completing the store
@@ -777,7 +790,7 @@ settings:
         movementSpeed:
             title: Movement speed
             description: >-
-                Changes how fast the view moves when using the keyboard.
+                Changes how fast the view moves when using the keyboard or moving the mouse to the screen borders.
             speeds:
                 super_slow: Super slow
                 slow: Slow
@@ -832,7 +845,7 @@ settings:
         refreshRate:
             title: Tick Rate
             description: >-
-                The game will automatically adjust the tickrate to be between this target tickrate and half of it. For example, with a tickrate of 60hz, the game will try to stay at 60hz, and if your computer can't handle it it will go down until it eventually reaches 30hz.
+                This determines how many game ticks happen per second. In general, a higher tick rate means better precision but also worse performance. On lower tickrates, the throughput may not be exact.
 
         alwaysMultiplace:
             title: Multiplace
@@ -900,12 +913,22 @@ settings:
             description: >-
                 Enabled by default, selects the miner if you use the pipette when hovering a resource patch.
 
+        simplifiedBelts:
+            title: Simplified Belts (Ugly)
+            description: >-
+                Does not render belt items except when hovering the belt to save performance. I do not recommend to play with this setting if you do not absolutely need the performance.
+
+        enableMousePan:
+            title: Enable Mouse Pan
+            description: >-
+                Allows to move the map by moving the cursor to the edges of the screen. The speed depends on the Movement Speed setting.
+
 keybindings:
     title: Keybindings
     hint: >-
         Tip: Be sure to make use of CTRL, SHIFT and ALT! They enable different placement options.
 
-    resetKeybindings: Reset Keybindings
+    resetKeybindings: Reset
 
     categoryLabels:
         general: Application
@@ -1006,3 +1029,53 @@ demo:
         exportingBase: Exporting whole Base as Image
 
     settingNotAvailable: Not available in the demo.
+
+tips:
+    - The hub accepts input of any kind, not just the current shape!
+    - Make sure your factories are modular - it will pay out!
+    - Don't build too close to the hub, or it will be a huge chaos!
+    - If stacking does not work, try switching the inputs.
+    - You can toggle the belt planner direction by pressing <b>R</b>.
+    - Holding <b>CTRL</b> allows dragging of belts without auto-orientation.
+    - Ratios stay the same, as long as all upgrades are on the same Tier.
+    - Serial execution is more efficient than parallel.
+    - You will unlock more variants of buildings later in the game!
+    - You can use <b>T</b> to switch between different variants.
+    - Symmetry is key!
+    - You can weave different tiers of tunnels.
+    - Try to build compact factories - it will pay out!
+    - The painter has a mirrored variant which you can select with <b>T</b>
+    - Having the right building ratios will maximize efficiency.
+    - At maximum level, 5 extractors will fill a single belt.
+    - Don't forget about tunnels!
+    - You don't need to divide up items evenly for full efficiency.
+    - Holding <b>SHIFT</b> will activate the belt planner, letting you place long lines of belts easily.
+    - Cutters always cut vertically, regardless of their orientation.
+    - To get white mix all three colors.
+    - The storage buffer priorities the first output.
+    - Invest time to build repeatable designs - it's worth it!
+    - Holding <b>CTRL</b> allows to place multiple buildings.
+    - You can hold <b>ALT</b> to invert the direction of placed belts.
+    - Efficiency is key!
+    - Shape patches that are further away from the hub are more complex.
+    - Machines have a limited speed, divide them up for maximum efficiency.
+    - Use balancers to maximize your efficiency.
+    - Organization is important. Try not to cross conveyors too much.
+    - Plan in advance, or it will be a huge chaos!
+    - Don't remove your old factories! You'll need them to unlock upgrades.
+    - Try beating level 18 on your own before seeking for help!
+    - Don't complicate things, try to stay simple and you'll go far.
+    - You may need to re-use factories later in the game. Plan your factories to be re-usable.
+    - Sometimes, you can find a needed shape in the map without creating it with stackers.
+    - Full windmills / pinwheels can never spawn naturally.
+    - Color your shapes before cutting for maximum efficiency.
+    - With modules, space is merely a perception; a concern for mortal men.
+    - Make a separate blueprint factory. They're important for modules.
+    - Have a closer look on the color mixer, and your questions will be answered.
+    - Use <b>CTRL</b> + Click to select an area.
+    - Building too close to the hub can get in the way of later projects.
+    - The pin icon next to each shape in the upgrade list pins it to the screen.
+    - Mix all primary colours together to make white!
+    - You have an infinite map, don't cramp your factory, expand!
+    - Also try Factorio! It's my favourite game.
+    - The quad cutter cuts clockwise starting from the top right!

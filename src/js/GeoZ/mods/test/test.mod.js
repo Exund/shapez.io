@@ -1,7 +1,7 @@
 import * as GeoZ from "../../main";
 import { Vector, enumDirection } from "../../../core/vector";
 import { Entity } from "../../../game/entity";
-import { ModProcessor, ProcessorParameters } from "../../mod_processor";
+import { ModProcessor } from "../../mod_processor";
 import { ShapeItem } from "../../../game/items/shape_item";
 import { ShapeDefinition } from "../../../game/shape_definition";
 import { ItemProcessorComponent } from "../../../game/components/item_processor";
@@ -130,7 +130,7 @@ class MetaInvertedGatesBuilding extends GeoZ.MetaModBuilding {
     }
 
     static getVariants() {
-        return ["NORGate", "XNORGate"];
+        return ["XNORGate", "NORGate"];
     }
 
     constructor() {
@@ -269,12 +269,13 @@ class SquareConverter extends ModProcessor {
 
     /**
      * Process ther current item
-     * @param {ProcessorParameters} param0
-     * @returns {Boolean} Whether to track the production towards the analytics
+     * @param {import("../../../game/systems/item_processor").ProcessorImplementationPayload} param0
      */
     static process({ outItems }) {
-        outItems.push({ item: new ShapeItem(ShapeDefinition.fromShortKey("SuSuSuSu")) });
-        return true;
+        outItems.push({
+            item: new ShapeItem(ShapeDefinition.fromShortKey("SuSuSuSu")),
+            doNotTrack: true,
+        });
     }
 }
 
