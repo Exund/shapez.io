@@ -34,6 +34,13 @@ export class MetaBuilding {
     }
 
     /**
+     * Should return the dimensions of the building
+     */
+    getDimensions(variant = defaultBuildingVariant) {
+        return new Vector(1, 1);
+    }
+
+    /**
      * Returns whether the building has the direction lock switch available
      */
     getHasDirectionLockAvailable() {
@@ -45,6 +52,28 @@ export class MetaBuilding {
      */
     getStayInPlacementMode() {
         return false;
+    }
+
+    /**
+     * Can return a special interlaved 9 elements overlay matrix for rendering
+     * @param {number} rotation
+     * @param {number} rotationVariant
+     * @param {string} variant
+     * @param {Entity} entity
+     * @returns {Array<number>|null}
+     */
+    getSpecialOverlayRenderMatrix(rotation, rotationVariant, variant, entity) {
+        return null;
+    }
+
+    /**
+     * Should return additional statistics about this building
+     * @param {GameRoot} root
+     * @param {string} variant
+     * @returns {Array<[string, string]>}
+     */
+    getAdditionalStatistics(root, variant) {
+        return [];
     }
 
     /**
@@ -70,6 +99,14 @@ export class MetaBuilding {
     }
 
     /**
+     * Whether to rotate automatically in the dragging direction while placing
+     * @param {string} variant
+     */
+    getRotateAutomaticallyWhilePlacing(variant) {
+        return false;
+    }
+
+    /**
      * Returns whether this building is removable
      * @returns {boolean}
      */
@@ -87,19 +124,44 @@ export class MetaBuilding {
 
     /**
      * @param {GameRoot} root
-     * @returns {typeof MetaBuildingVariant}
      */
-    getDefaultVariant(root) {
-        return this.getAvailableVariants(root)[0];
+    getAvailableVariants(root) {
+        return [defaultBuildingVariant];
     }
 
     /**
-     * @param {GameRoot} root
-     * @returns {Array<typeof MetaBuildingVariant>}
+     * Returns a preview sprite
+     * @returns {AtlasSprite}
      */
-    getAvailableVariants(root) {
-        abstract;
-        return [];
+    getPreviewSprite(rotationVariant = 0, variant = defaultBuildingVariant) {
+        return Loader.getSprite(
+            "sprites/buildings/" +
+                this.id +
+                (variant === defaultBuildingVariant ? "" : "-" + variant) +
+                ".png"
+        );
+    }
+
+    /**
+     * Returns a sprite for blueprints
+     * @returns {AtlasSprite}
+     */
+    getBlueprintSprite(rotationVariant = 0, variant = defaultBuildingVariant) {
+        return Loader.getSprite(
+            "sprites/blueprints/" +
+                this.id +
+                (variant === defaultBuildingVariant ? "" : "-" + variant) +
+                ".png"
+        );
+    }
+
+    /**
+     * Returns whether this building is rotateable
+     * @param {string} variant
+     * @returns {boolean}
+     */
+    getIsRotateable(variant) {
+        return true;
     }
 
     /**
@@ -133,7 +195,7 @@ export class MetaBuilding {
      * @param {number=} param0.rotation Rotation
      * @param {number} param0.originalRotation Original Rotation
      * @param {number} param0.rotationVariant Rotation variant
-     * @param {typeof MetaBuildingVariant} param0.variant
+     * @param {string} param0.variant
      */
     createEntity({ root, origin, rotation, originalRotation, rotationVariant, variant }) {
         const entity = new Entity(root);
@@ -143,54 +205,28 @@ export class MetaBuilding {
                 origin: new Vector(origin.x, origin.y),
                 rotation,
                 originalRotation,
-                tileSize: variant.getDimensions().copy(),
+                tileSize: this.getDimensions(variant).copy(),
                 code: getCodeFromBuildingData(this, variant, rotationVariant),
             })
         );
         this.setupEntityComponents(entity, root);
-        variant.updateEntityComponents(entity, rotationVariant, root);
+        this.updateVariants(entity, rotationVariant, variant);
         return entity;
     }
 
-    // PRIVATE INTERFACE
-
     /**
-     * Should setup the entity components
-     * @param {Entity} entity
-     * @param {GameRoot} root
-     */
-    setupEntityComponents(entity, root) {
-        abstract;
-    }
-}
-
-export class MetaBuildingVariant {
-    static toString() {
-        return this.getId();
-    }
-
-    /**
-     * @returns {string} Variant id
-     */
-    static getId() {
-        abstract;
-        return "";
-    }
-
-    /**
-     * Should update the entity components
-     * @param {Entity} entity
+     * Returns the sprite for a given variant
      * @param {number} rotationVariant
-     * @param {GameRoot} root
+     * @param {string} variant
+     * @returns {AtlasSprite}
      */
-    static updateEntityComponents(entity, rotationVariant, root) {}
-
-    /**
-     * Returns whether this building is rotateable
-     * @returns {boolean}
-     */
-    static getIsRotateable() {
-        return true;
+    getSprite(rotationVariant, variant) {
+        return Loader.getSprite(
+            "sprites/buildings/" +
+                this.id +
+                (variant === defaultBuildingVariant ? "" : "-" + variant) +
+                ".png"
+        );
     }
 
     /**
@@ -199,11 +235,12 @@ export class MetaBuildingVariant {
      * @param {GameRoot} param0.root
      * @param {Vector} param0.tile
      * @param {number} param0.rotation
+     * @param {string} param0.variant
      * @param {Layer} param0.layer
      * @return {{ rotation: number, rotationVariant: number, connectedEntities?: Array<Entity> }}
      */
-    static computeOptimalDirectionAndRotationVariantAtTile({ root, tile, rotation, layer }) {
-        if (!this.getIsRotateable()) {
+    computeOptimalDirectionAndRotationVariantAtTile({ root, tile, rotation, variant, layer }) {
+        if (!this.getIsRotateable(variant)) {
             return {
                 rotation: 0,
                 rotationVariant: 0,
@@ -216,81 +253,21 @@ export class MetaBuildingVariant {
     }
 
     /**
-     * Can return a special interlaved 9 elements overlay matrix for rendering
-     * @param {number} rotation
-     * @param {number} rotationVariant
+     * Should update the entity to match the given variants
      * @param {Entity} entity
-     * @returns {Array<number>|null}
+     * @param {number} rotationVariant
+     * @param {string} variant
      */
-    static getSpecialOverlayRenderMatrix(rotation, rotationVariant, entity) {
-        return null;
-    }
+    updateVariants(entity, rotationVariant, variant) {}
+
+    // PRIVATE INTERFACE
 
     /**
-     * Should return additional statistics about this building
+     * Should setup the entity components
+     * @param {Entity} entity
      * @param {GameRoot} root
-     * @returns {Array<[string, string]>}
      */
-    static getAdditionalStatistics(root) {
-        return [];
-    }
-
-    /**
-     * Returns the sprite for a given variant
-     * @param {number} rotationVariant
-     * @param {MetaBuilding} building
-     * @returns {AtlasSprite}
-     */
-    static getSprite(rotationVariant, building) {
-        return Loader.getSprite(
-            "sprites/buildings/" +
-                building.id +
-                (this.getId() === defaultBuildingVariant ? "" : "-" + this.getId()) +
-                ".png"
-        );
-    }
-
-    /**
-     * Returns the sprite for a given variant
-     * @param {number} rotationVariant
-     * @param {MetaBuilding} building
-     * @returns {AtlasSprite}
-     */
-    static getBlueprintSprite(rotationVariant, building) {
-        return Loader.getSprite(
-            "sprites/blueprints/" +
-                building.id +
-                (this.getId() === defaultBuildingVariant ? "" : "-" + this.getId()) +
-                ".png"
-        );
-    }
-
-    /**
-     * Returns the sprite for a given variant
-     * @param {number} rotationVariant
-     * @param {MetaBuilding} building
-     * @returns {AtlasSprite}
-     */
-    static getPreviewSprite(rotationVariant, building) {
-        return Loader.getSprite(
-            "sprites/buildings/" +
-                building.id +
-                (this.getId() === defaultBuildingVariant ? "" : "-" + this.getId()) +
-                ".png"
-        );
-    }
-
-    /**
-     * Whether to rotate automatically in the dragging direction while placing
-     */
-    static getRotateAutomaticallyWhilePlacing() {
-        return false;
-    }
-
-    /**
-     * Should return the dimensions of the building
-     */
-    static getDimensions() {
-        return new Vector(1, 1);
+    setupEntityComponents(entity, root) {
+        abstract;
     }
 }

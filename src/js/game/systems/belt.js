@@ -150,15 +150,14 @@ export class BeltSystem extends GameSystemWithFilter {
                         continue;
                     }
 
-                    const defaultVariant = metaBelt.getDefaultVariant(this.root);
-
                     const {
                         rotation,
                         rotationVariant,
-                    } = defaultVariant.computeOptimalDirectionAndRotationVariantAtTile({
+                    } = metaBelt.computeOptimalDirectionAndRotationVariantAtTile({
                         root: this.root,
                         tile: new Vector(x, y),
                         rotation: targetStaticComp.originalRotation,
+                        variant: defaultBuildingVariant,
                         layer: targetEntity.layer,
                     });
 
@@ -171,13 +170,12 @@ export class BeltSystem extends GameSystemWithFilter {
 
                         // Change stuff
                         targetStaticComp.rotation = rotation;
-                        //metaBelt.updateVariants(targetEntity, rotationVariant, defaultBuildingVariant);
-                        defaultVariant.updateEntityComponents(targetEntity, rotationVariant, this.root);
+                        metaBelt.updateVariants(targetEntity, rotationVariant, defaultBuildingVariant);
 
                         // Update code as well
                         targetStaticComp.code = getCodeFromBuildingData(
                             metaBelt,
-                            defaultVariant,
+                            defaultBuildingVariant,
                             rotationVariant
                         );
 

@@ -5,7 +5,7 @@ import { ItemAcceptorComponent } from "../components/item_acceptor";
 import { ItemEjectorComponent } from "../components/item_ejector";
 import { enumItemProcessorTypes, ItemProcessorComponent } from "../components/item_processor";
 import { Entity } from "../entity";
-import { defaultBuildingVariant, MetaBuilding, MetaBuildingVariant } from "../meta_building";
+import { MetaBuilding } from "../meta_building";
 import { GameRoot } from "../root";
 import { enumHubGoalRewards } from "../tutorial_goals";
 
@@ -18,8 +18,18 @@ export class MetaStackerBuilding extends MetaBuilding {
         return "#9fcd7d";
     }
 
-    getAvailableVariants() {
-        return [DefaultStackerVariant];
+    getDimensions() {
+        return new Vector(2, 1);
+    }
+
+    /**
+     * @param {GameRoot} root
+     * @param {string} variant
+     * @returns {Array<[string, string]>}
+     */
+    getAdditionalStatistics(root, variant) {
+        const speed = root.hubGoals.getProcessorBaseSpeed(enumItemProcessorTypes.stacker);
+        return [[T.ingame.buildingPlacement.infoTexts.speed, formatItemsPerSecond(speed)]];
     }
 
     /**
@@ -62,24 +72,5 @@ export class MetaStackerBuilding extends MetaBuilding {
                 ],
             })
         );
-    }
-}
-
-export class DefaultStackerVariant extends MetaBuildingVariant {
-    static getId() {
-        return defaultBuildingVariant;
-    }
-
-    static getDimensions() {
-        return new Vector(2, 1);
-    }
-
-    /**
-     * @param {GameRoot} root
-     * @returns {Array<[string, string]>}
-     */
-    static getAdditionalStatistics(root) {
-        const speed = root.hubGoals.getProcessorBaseSpeed(enumItemProcessorTypes.stacker);
-        return [[T.ingame.buildingPlacement.infoTexts.speed, formatItemsPerSecond(speed)]];
     }
 }

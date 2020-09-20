@@ -1,5 +1,5 @@
 /* typehints:start */
-import { MetaBuilding, MetaBuildingVariant } from "./meta_building";
+import { MetaBuilding } from "./meta_building";
 import { AtlasSprite } from "../core/sprites";
 import { Vector } from "../core/vector";
 /* typehints:end */
@@ -8,7 +8,7 @@ import { Vector } from "../core/vector";
  * @typedef {{
  *   metaClass: typeof MetaBuilding,
  *   metaInstance?: MetaBuilding,
- *   variant: typeof MetaBuildingVariant,
+ *   variant?: string,
  *   rotationVariant?: number,
  *   tileSize?: Vector,
  *   sprite?: AtlasSprite,
@@ -29,17 +29,22 @@ export const gBuildingVariants = {
  * Registers a new variant
  * @param {number | string} id
  * @param {typeof MetaBuilding} meta
- * @param {typeof MetaBuildingVariant} variant
+ * @param {string} variant
  * @param {number} rotationVariant
  */
-export function registerBuildingVariant(id, meta, variant, rotationVariant = 0) {
+export function registerBuildingVariant(
+    id,
+    meta,
+    variant = "default" /* FIXME: Circular dependency, actually its defaultBuildingVariant */,
+    rotationVariant = 0
+) {
     assert(!gBuildingVariants[id], "Duplicate id: " + id);
-    gBuildingVariants[id.toString()] = {
+    gBuildingVariants[id] = {
         metaClass: meta,
         variant,
         rotationVariant,
         // @ts-ignore
-        tileSize: variant.getDimensions(),
+        tileSize: new meta().getDimensions(variant),
     };
 }
 
@@ -56,7 +61,7 @@ export function getBuildingDataFromCode(code) {
 /**
  * Finds the code for a given variant
  * @param {MetaBuilding} metaBuilding
- * @param {typeof MetaBuildingVariant} variant
+ * @param {string} variant
  * @param {number} rotationVariant
  */
 export function getCodeFromBuildingData(metaBuilding, variant, rotationVariant) {
@@ -72,12 +77,7 @@ export function getCodeFromBuildingData(metaBuilding, variant, rotationVariant) 
     }
     assertAlways(
         false,
-        "Building not found by data: " +
-            metaBuilding.getId() +
-            " / " +
-            variant.getId() +
-            " / " +
-            rotationVariant
+        "Building not found by data: " + metaBuilding.getId() + " / " + variant + " / " + rotationVariant
     );
     return "0";
 }

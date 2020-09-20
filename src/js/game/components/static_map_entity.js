@@ -86,7 +86,7 @@ export class StaticMapEntityComponent extends Component {
         tileSize = new Vector(1, 1),
         rotation = 0,
         originalRotation = 0,
-        code = "0",
+        code = 0,
     }) {
         super();
         assert(

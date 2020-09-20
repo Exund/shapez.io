@@ -738,15 +738,14 @@ export class WireSystem extends GameSystemWithFilter {
                         continue;
                     }
 
-                    const defaultVariant = metaWire.getDefaultVariant(this.root);
-
                     const {
                         rotation,
                         rotationVariant,
-                    } = defaultVariant.computeOptimalDirectionAndRotationVariantAtTile({
+                    } = metaWire.computeOptimalDirectionAndRotationVariantAtTile({
                         root: this.root,
                         tile: new Vector(x, y),
                         rotation: targetStaticComp.originalRotation,
+                        variant: defaultBuildingVariant,
                         layer: targetEntity.layer,
                     });
 
@@ -756,13 +755,12 @@ export class WireSystem extends GameSystemWithFilter {
                     if (targetStaticComp.rotation !== rotation || newType !== targetWireComp.type) {
                         // Change stuff
                         targetStaticComp.rotation = rotation;
-                        //metaWire.updateVariants(targetEntity, rotationVariant, defaultBuildingVariant);
-                        defaultVariant.updateEntityComponents(targetEntity, rotationVariant, this.root);
+                        metaWire.updateVariants(targetEntity, rotationVariant, defaultBuildingVariant);
 
                         // Update code as well
                         targetStaticComp.code = getCodeFromBuildingData(
                             metaWire,
-                            defaultVariant,
+                            defaultBuildingVariant,
                             rotationVariant
                         );
 

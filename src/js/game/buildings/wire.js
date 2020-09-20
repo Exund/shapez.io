@@ -4,7 +4,7 @@ import { enumDirection, enumDirectionToAngle, enumDirectionToVector, Vector } fr
 import { SOUNDS } from "../../platform/sound";
 import { enumWireType, WireComponent } from "../components/wire";
 import { Entity } from "../entity";
-import { defaultBuildingVariant, MetaBuilding, MetaBuildingVariant } from "../meta_building";
+import { MetaBuilding } from "../meta_building";
 import { GameRoot } from "../root";
 
 export const arrayWireRotationVariantToType = [
@@ -26,10 +26,6 @@ export class MetaWireBuilding extends MetaBuilding {
         super("wire");
     }
 
-    getAvailableVariants() {
-        return [DefaultWireVariant];
-    }
-
     getHasDirectionLockAvailable() {
         return true;
     }
@@ -38,12 +34,20 @@ export class MetaWireBuilding extends MetaBuilding {
         return "#25fff2";
     }
 
+    getDimensions() {
+        return new Vector(1, 1);
+    }
+
     getStayInPlacementMode() {
         return true;
     }
 
     getPlacementSound() {
         return SOUNDS.placeBelt;
+    }
+
+    getRotateAutomaticallyWhilePlacing() {
+        return true;
     }
 
     /** @returns {"wires"} **/
@@ -75,24 +79,65 @@ export class MetaWireBuilding extends MetaBuilding {
         // @todo
         entity.addComponent(new WireComponent({}));
     }
-}
 
-export class DefaultWireVariant extends MetaBuildingVariant {
     /**
-     * @returns {string} Variant id
+     *
+     * @param {Entity} entity
+     * @param {number} rotationVariant
      */
-    static getId() {
-        return defaultBuildingVariant;
+    updateVariants(entity, rotationVariant) {
+        entity.components.Wire.type = arrayWireRotationVariantToType[rotationVariant];
     }
 
     /**
-     * Should update the entity components
-     * @param {Entity} entity
+     *
+     * @param {number} rotation
      * @param {number} rotationVariant
-     * @param {GameRoot} root
+     * @param {string} variant
+     * @param {Entity} entity
      */
-    static updateEntityComponents(entity, rotationVariant, root) {
-        entity.components.Wire.type = arrayWireRotationVariantToType[rotationVariant];
+    getSpecialOverlayRenderMatrix(rotation, rotationVariant, variant, entity) {
+        return wireOverlayMatrices[entity.components.Wire.type][rotation];
+    }
+
+    getPreviewSprite(rotationVariant) {
+        switch (arrayWireRotationVariantToType[rotationVariant]) {
+            case enumWireType.regular: {
+                return Loader.getSprite("sprites/buildings/wire.png");
+            }
+            case enumWireType.turn: {
+                return Loader.getSprite("sprites/buildings/wire-turn.png");
+            }
+            case enumWireType.split: {
+                return Loader.getSprite("sprites/buildings/wire-split.png");
+            }
+            case enumWireType.cross: {
+                return Loader.getSprite("sprites/buildings/wire-cross.png");
+            }
+            default: {
+                assertAlways(false, "Invalid wire rotation variant");
+            }
+        }
+    }
+
+    getBlueprintSprite(rotationVariant) {
+        switch (arrayWireRotationVariantToType[rotationVariant]) {
+            case enumWireType.regular: {
+                return Loader.getSprite("sprites/blueprints/wire.png");
+            }
+            case enumWireType.turn: {
+                return Loader.getSprite("sprites/blueprints/wire-turn.png");
+            }
+            case enumWireType.split: {
+                return Loader.getSprite("sprites/blueprints/wire-split.png");
+            }
+            case enumWireType.cross: {
+                return Loader.getSprite("sprites/blueprints/wire-cross.png");
+            }
+            default: {
+                assertAlways(false, "Invalid wire rotation variant");
+            }
+        }
     }
 
     /**
@@ -101,10 +146,11 @@ export class DefaultWireVariant extends MetaBuildingVariant {
      * @param {GameRoot} param0.root
      * @param {Vector} param0.tile
      * @param {number} param0.rotation
-     * @param {Layer} param0.layer
+     * @param {string} param0.variant
+     * @param {string} param0.layer
      * @return {{ rotation: number, rotationVariant: number, connectedEntities?: Array<Entity> }}
      */
-    static computeOptimalDirectionAndRotationVariantAtTile({ root, tile, rotation, layer }) {
+    computeOptimalDirectionAndRotationVariantAtTile({ root, tile, rotation, variant, layer }) {
         const connections = {
             top: root.logic.computeWireEdgeStatus({ tile, rotation, edge: enumDirection.top }),
             right: root.logic.computeWireEdgeStatus({ tile, rotation, edge: enumDirection.right }),
@@ -213,82 +259,5 @@ export class DefaultWireVariant extends MetaBuildingVariant {
             rotation: (rotation + 360 * 10) % 360,
             rotationVariant: arrayWireRotationVariantToType.indexOf(targetType),
         };
-    }
-
-    /**
-     * Can return a special interlaved 9 elements overlay matrix for rendering
-     * @param {number} rotation
-     * @param {number} rotationVariant
-     * @param {Entity} entity
-     * @returns {Array<number>|null}
-     */
-    static getSpecialOverlayRenderMatrix(rotation, rotationVariant, entity) {
-        return wireOverlayMatrices[entity.components.Wire.type][rotation];
-    }
-
-    /**
-     * Returns the sprite for a given variant
-     * @param {number} rotationVariant
-     * @param {MetaBuilding} building
-     */
-    static getSprite(rotationVariant, building) {
-        return null;
-    }
-
-    /**
-     * Returns the sprite for a given variant
-     * @param {number} rotationVariant
-     * @param {MetaBuilding} building
-     */
-    static getBlueprintSprite(rotationVariant, building) {
-        switch (arrayWireRotationVariantToType[rotationVariant]) {
-            case enumWireType.regular: {
-                return Loader.getSprite("sprites/blueprints/wire.png");
-            }
-            case enumWireType.turn: {
-                return Loader.getSprite("sprites/blueprints/wire-turn.png");
-            }
-            case enumWireType.split: {
-                return Loader.getSprite("sprites/blueprints/wire-split.png");
-            }
-            case enumWireType.cross: {
-                return Loader.getSprite("sprites/blueprints/wire-cross.png");
-            }
-            default: {
-                assertAlways(false, "Invalid wire rotation variant");
-            }
-        }
-    }
-
-    /**
-     * Returns the sprite for a given variant
-     * @param {number} rotationVariant
-     * @param {MetaBuilding} building
-     */
-    static getPreviewSprite(rotationVariant, building) {
-        switch (arrayWireRotationVariantToType[rotationVariant]) {
-            case enumWireType.regular: {
-                return Loader.getSprite("sprites/buildings/wire.png");
-            }
-            case enumWireType.turn: {
-                return Loader.getSprite("sprites/buildings/wire-turn.png");
-            }
-            case enumWireType.split: {
-                return Loader.getSprite("sprites/buildings/wire-split.png");
-            }
-            case enumWireType.cross: {
-                return Loader.getSprite("sprites/buildings/wire-cross.png");
-            }
-            default: {
-                assertAlways(false, "Invalid wire rotation variant");
-            }
-        }
-    }
-
-    /**
-     * Whether to rotate automatically in the dragging direction while placing
-     */
-    static getRotateAutomaticallyWhilePlacing() {
-        return true;
     }
 }

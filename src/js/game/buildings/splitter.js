@@ -3,7 +3,7 @@ import { ItemAcceptorComponent } from "../components/item_acceptor";
 import { ItemEjectorComponent } from "../components/item_ejector";
 import { enumItemProcessorTypes, ItemProcessorComponent } from "../components/item_processor";
 import { Entity } from "../entity";
-import { MetaBuilding, defaultBuildingVariant, MetaBuildingVariant } from "../meta_building";
+import { MetaBuilding, defaultBuildingVariant } from "../meta_building";
 import { GameRoot } from "../root";
 import { enumHubGoalRewards } from "../tutorial_goals";
 import { T } from "../../translations";
@@ -23,6 +23,30 @@ export class MetaSplitterBuilding extends MetaBuilding {
         super("splitter");
     }
 
+    getDimensions(variant) {
+        switch (variant) {
+            case defaultBuildingVariant:
+                return new Vector(2, 1);
+            case enumSplitterVariants.compact:
+            case enumSplitterVariants.compactInverse:
+            case enumSplitterVariants.compactMerge:
+            case enumSplitterVariants.compactMergeInverse:
+                return new Vector(1, 1);
+            default:
+                assertAlways(false, "Unknown splitter variant: " + variant);
+        }
+    }
+
+    /**
+     * @param {GameRoot} root
+     * @param {string} variant
+     * @returns {Array<[string, string]>}
+     */
+    getAdditionalStatistics(root, variant) {
+        const speed = root.hubGoals.getProcessorBaseSpeed(enumItemProcessorTypes.splitter);
+        return [[T.ingame.buildingPlacement.infoTexts.speed, formatItemsPerSecond(speed)]];
+    }
+
     getSilhouetteColor() {
         return "#444";
     }
@@ -31,17 +55,17 @@ export class MetaSplitterBuilding extends MetaBuilding {
      * @param {GameRoot} root
      */
     getAvailableVariants(root) {
-        let variants = [DefaultSplitterVariant];
+        let available = [defaultBuildingVariant];
 
         if (root.hubGoals.isRewardUnlocked(enumHubGoalRewards.reward_splitter_compact)) {
-            variants.push(CompactSplitterVariant, CompactInverseSplitterVariant);
+            available.push(enumSplitterVariants.compact, enumSplitterVariants.compactInverse);
         }
 
         if (root.hubGoals.isRewardUnlocked(enumHubGoalRewards.reward_merger_compact)) {
-            variants.push(CompactMergerVariant, CompactInverseMergerVariant);
+            available.push(enumSplitterVariants.compactMerge, enumSplitterVariants.compactMergeInverse);
         }
 
-        return variants;
+        return available;
     }
 
     /**
@@ -77,172 +101,97 @@ export class MetaSplitterBuilding extends MetaBuilding {
 
         entity.addComponent(new BeltUnderlaysComponent({ underlays: [] }));
     }
-}
-
-export class DefaultSplitterVariant extends MetaBuildingVariant {
-    static getId() {
-        return defaultBuildingVariant;
-    }
-
-    static getDimensions() {
-        return new Vector(2, 1);
-    }
 
     /**
-     * @param {GameRoot} root
-     * @returns {Array<[string, string]>}
-     */
-    static getAdditionalStatistics(root) {
-        const speed = root.hubGoals.getProcessorBaseSpeed(enumItemProcessorTypes.splitter);
-        return [[T.ingame.buildingPlacement.infoTexts.speed, formatItemsPerSecond(speed)]];
-    }
-
-    /**
+     *
      * @param {Entity} entity
      * @param {number} rotationVariant
+     * @param {string} variant
      */
-    static updateEntityComponents(entity, rotationVariant) {
-        entity.components.ItemAcceptor.setSlots([
-            {
-                pos: new Vector(0, 0),
-                directions: [enumDirection.bottom],
-            },
-            {
-                pos: new Vector(1, 0),
-                directions: [enumDirection.bottom],
-            },
-        ]);
+    updateVariants(entity, rotationVariant, variant) {
+        switch (variant) {
+            case defaultBuildingVariant: {
+                entity.components.ItemAcceptor.setSlots([
+                    {
+                        pos: new Vector(0, 0),
+                        directions: [enumDirection.bottom],
+                    },
+                    {
+                        pos: new Vector(1, 0),
+                        directions: [enumDirection.bottom],
+                    },
+                ]);
 
-        entity.components.ItemEjector.setSlots([
-            { pos: new Vector(0, 0), direction: enumDirection.top },
-            { pos: new Vector(1, 0), direction: enumDirection.top },
-        ]);
+                entity.components.ItemEjector.setSlots([
+                    { pos: new Vector(0, 0), direction: enumDirection.top },
+                    { pos: new Vector(1, 0), direction: enumDirection.top },
+                ]);
 
-        entity.components.BeltUnderlays.underlays = [
-            { pos: new Vector(0, 0), direction: enumDirection.top },
-            { pos: new Vector(1, 0), direction: enumDirection.top },
-        ];
-    }
-}
+                entity.components.BeltUnderlays.underlays = [
+                    { pos: new Vector(0, 0), direction: enumDirection.top },
+                    { pos: new Vector(1, 0), direction: enumDirection.top },
+                ];
 
-export class CompactSplitterVariant extends DefaultSplitterVariant {
-    static getId() {
-        return enumSplitterVariants.compact;
-    }
+                break;
+            }
+            case enumSplitterVariants.compact:
+            case enumSplitterVariants.compactInverse: {
+                entity.components.ItemAcceptor.setSlots([
+                    {
+                        pos: new Vector(0, 0),
+                        directions: [enumDirection.bottom],
+                    },
+                    {
+                        pos: new Vector(0, 0),
+                        directions: [
+                            variant === enumSplitterVariants.compactInverse
+                                ? enumDirection.left
+                                : enumDirection.right,
+                        ],
+                    },
+                ]);
 
-    static getDimensions() {
-        return new Vector(1, 1);
-    }
+                entity.components.ItemEjector.setSlots([
+                    { pos: new Vector(0, 0), direction: enumDirection.top },
+                ]);
 
-    /**
-     * @param {Entity} entity
-     * @param {number} rotationVariant
-     */
-    static updateEntityComponents(entity, rotationVariant) {
-        entity.components.ItemAcceptor.setSlots([
-            {
-                pos: new Vector(0, 0),
-                directions: [enumDirection.bottom],
-            },
-            {
-                pos: new Vector(0, 0),
-                directions: [enumDirection.right],
-            },
-        ]);
+                entity.components.BeltUnderlays.underlays = [
+                    { pos: new Vector(0, 0), direction: enumDirection.top },
+                ];
 
-        entity.components.ItemEjector.setSlots([{ pos: new Vector(0, 0), direction: enumDirection.top }]);
+                break;
+            }
+            case enumSplitterVariants.compactMerge:
+            case enumSplitterVariants.compactMergeInverse: {
+                entity.components.ItemAcceptor.setSlots([
+                    {
+                        pos: new Vector(0, 0),
+                        directions: [enumDirection.bottom],
+                    },
+                ]);
 
-        entity.components.BeltUnderlays.underlays = [{ pos: new Vector(0, 0), direction: enumDirection.top }];
-    }
-}
+                entity.components.ItemEjector.setSlots([
+                    {
+                        pos: new Vector(0, 0),
+                        direction: enumDirection.top,
+                    },
+                    {
+                        pos: new Vector(0, 0),
+                        direction:
+                            variant === enumSplitterVariants.compactMergeInverse
+                                ? enumDirection.left
+                                : enumDirection.right,
+                    },
+                ]);
 
-export class CompactInverseSplitterVariant extends CompactSplitterVariant {
-    static getId() {
-        return enumSplitterVariants.compactInverse;
-    }
+                entity.components.BeltUnderlays.underlays = [
+                    { pos: new Vector(0, 0), direction: enumDirection.top },
+                ];
 
-    /**
-     * @param {Entity} entity
-     * @param {number} rotationVariant
-     */
-    static updateEntityComponents(entity, rotationVariant) {
-        entity.components.ItemAcceptor.setSlots([
-            {
-                pos: new Vector(0, 0),
-                directions: [enumDirection.bottom],
-            },
-            {
-                pos: new Vector(0, 0),
-                directions: [enumDirection.left],
-            },
-        ]);
-
-        entity.components.ItemEjector.setSlots([{ pos: new Vector(0, 0), direction: enumDirection.top }]);
-
-        entity.components.BeltUnderlays.underlays = [{ pos: new Vector(0, 0), direction: enumDirection.top }];
-    }
-}
-
-export class CompactMergerVariant extends CompactSplitterVariant {
-    static getId() {
-        return enumSplitterVariants.compactMerge;
-    }
-
-    /**
-     * @param {Entity} entity
-     * @param {number} rotationVariant
-     */
-    static updateEntityComponents(entity, rotationVariant) {
-        entity.components.ItemAcceptor.setSlots([
-            {
-                pos: new Vector(0, 0),
-                directions: [enumDirection.bottom],
-            },
-        ]);
-
-        entity.components.ItemEjector.setSlots([
-            {
-                pos: new Vector(0, 0),
-                direction: enumDirection.top,
-            },
-            {
-                pos: new Vector(0, 0),
-                direction: enumDirection.right,
-            },
-        ]);
-
-        entity.components.BeltUnderlays.underlays = [{ pos: new Vector(0, 0), direction: enumDirection.top }];
-    }
-}
-
-export class CompactInverseMergerVariant extends CompactSplitterVariant {
-    static getId() {
-        return enumSplitterVariants.compactMergeInverse;
-    }
-
-    /**
-     * @param {Entity} entity
-     * @param {number} rotationVariant
-     */
-    static updateEntityComponents(entity, rotationVariant) {
-        entity.components.ItemAcceptor.setSlots([
-            {
-                pos: new Vector(0, 0),
-                directions: [enumDirection.bottom],
-            },
-        ]);
-
-        entity.components.ItemEjector.setSlots([
-            {
-                pos: new Vector(0, 0),
-                direction: enumDirection.top,
-            },
-            {
-                pos: new Vector(0, 0),
-                direction: enumDirection.left,
-            },
-        ]);
-
-        entity.components.BeltUnderlays.underlays = [{ pos: new Vector(0, 0), direction: enumDirection.top }];
+                break;
+            }
+            default:
+                assertAlways(false, "Unknown splitter variant: " + variant);
+        }
     }
 }

@@ -149,9 +149,10 @@ export class MapChunkView extends MapChunk {
                     const data = getBuildingDataFromCode(staticComp.code);
                     const metaBuilding = data.metaInstance;
 
-                    const overlayMatrix = data.variant.getSpecialOverlayRenderMatrix(
+                    const overlayMatrix = metaBuilding.getSpecialOverlayRenderMatrix(
                         staticComp.rotation,
                         data.rotationVariant,
+                        data.variant,
                         upperContent
                     );
 
@@ -248,9 +249,10 @@ export class MapChunkView extends MapChunk {
         const staticComp = entity.components.StaticMapEntity;
         const data = getBuildingDataFromCode(staticComp.code);
         const metaBuilding = data.metaInstance;
-        const overlayMatrix = data.variant.getSpecialOverlayRenderMatrix(
+        const overlayMatrix = metaBuilding.getSpecialOverlayRenderMatrix(
             staticComp.rotation,
             data.rotationVariant,
+            data.variant,
             entity
         );
         context.fillStyle = overrideColor || metaBuilding.getSilhouetteColor();
