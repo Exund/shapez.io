@@ -46,7 +46,7 @@ export class ItemProcessorSystem extends GameSystemWithFilter {
          * @type {Object<enumItemProcessorTypes, function(ProcessorImplementationPayload) : string>}
          */
         this.handlers = {
-            [enumItemProcessorTypes.splitter]: this.process_SPLITTER,
+            [enumItemProcessorTypes.balancer]: this.process_BALANCER,
             [enumItemProcessorTypes.cutter]: this.process_CUTTER,
             [enumItemProcessorTypes.cutterQuad]: this.process_CUTTER_QUAD,
             [enumItemProcessorTypes.rotater]: this.process_ROTATER,
@@ -313,8 +313,7 @@ export class ItemProcessorSystem extends GameSystemWithFilter {
     /**
      * @param {ProcessorImplementationPayload} payload
      */
-    process_SPLITTER(payload) {
-        // trackProduction = false;
+    process_BALANCER(payload) {
         const availableSlots = payload.entity.components.ItemEjector.slots.length;
         const processorComp = payload.entity.components.ItemProcessor;
 
