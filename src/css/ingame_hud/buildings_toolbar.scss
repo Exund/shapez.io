@@ -4,9 +4,9 @@
     left: 50%;
     transform: translateX(-50%);
 
-    display: grid;
-    grid-template-rows: auto auto;
-    justify-items: center;
+    display: flex;
+    flex-direction: row;
+    //justify-items: center;
 
     background: transparent;
     transition: transform 120ms ease-in-out;
@@ -14,6 +14,28 @@
 
     &:not(.visible) {
         transform: translateX(-50%) translateY(#{D(100px)});
+    }
+
+    .pages_controller {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        button {
+            height: 30%;
+
+            & {
+                /* @load-async */
+                background-image: uiResource("icons/display_sorted.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &.up {
+                rotate: 180deg;
+            }
+        }
     }
 
     .buildings {

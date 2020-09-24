@@ -1,6 +1,6 @@
 import { gMetaBuildingRegistry } from "../../../core/global_registries";
 import { Signal, STOP_PROPAGATION } from "../../../core/signal";
-import { makeDiv } from "../../../core/utils";
+import { clamp, makeDiv, makeButton } from "../../../core/utils";
 import { KEYMAPPINGS } from "../../key_action_mapper";
 import { MetaBuilding } from "../../meta_building";
 import { GameRoot } from "../../root";
@@ -16,10 +16,18 @@ export class HUDBaseToolbar extends BaseHUDPart {
      * @param {function} param0.visibilityCondition
      * @param {string} param0.htmlElementId
      * @param {Layer=} param0.layer
+     * @param {Array<Array<typeof MetaBuilding>>} param0.pages
      */
     constructor(
         root,
-        { primaryBuildings, secondaryBuildings = [], visibilityCondition, htmlElementId, layer = "regular" }
+        {
+            primaryBuildings,
+            secondaryBuildings = [],
+            visibilityCondition,
+            htmlElementId,
+            layer = "regular",
+            pages = [],
+        }
     ) {
         super(root);
 
@@ -28,13 +36,26 @@ export class HUDBaseToolbar extends BaseHUDPart {
         this.visibilityCondition = visibilityCondition;
         this.htmlElementId = htmlElementId;
         this.layer = layer;
+        this.pages = pages;
+        this.pages = [primaryBuildings, secondaryBuildings];
+        /** @type {Array<DynamicDomAttach>} */
+        this.pagesAttaches = [];
+        this.pageIndex = -1;
+        /**
+         * @type {{[x: string]: HTMLButtonElement}}
+         */
+        this.buttons = {
+            up: null,
+            down: null,
+        };
 
         /** @type {Object.<string, {
          * metaBuilding: MetaBuilding,
          * unlocked: boolean,
          * selected: boolean,
          * element: HTMLElement,
-         * index: number
+         * index: number,
+         * page: number
          * }>} */
         this.buildingHandles = {};
     }
@@ -56,8 +77,20 @@ export class HUDBaseToolbar extends BaseHUDPart {
     }
 
     initialize() {
+        const pagesController = makeDiv(this.element, null, ["pages_controller"]);
+        if (this.pages.length > 1) {
+            const up = makeButton(pagesController, ["button", "styledButton", "up"]);
+            const down = makeButton(pagesController, ["button", "styledButton", "down"]);
+
+            this.trackClicks(up, () => this.changePage(this.pageIndex - 1));
+            this.trackClicks(down, () => this.changePage(this.pageIndex + 1));
+
+            this.buttons.up = up;
+            this.buttons.down = down;
+        }
+
         const actionMapper = this.root.keyMapper;
-        let rowSecondary;
+        /*let rowSecondary;
         if (this.secondaryBuildings.length > 0) {
             rowSecondary = makeDiv(this.element, null, ["buildings", "secondary"]);
 
@@ -101,6 +134,45 @@ export class HUDBaseToolbar extends BaseHUDPart {
                 selected: false,
                 index: i,
             };
+        }*/
+
+        for (let i = 0; i < this.pages.length; i++) {
+            const page = this.pages[i];
+
+            const pageDiv = makeDiv(this.element, null, ["buildings", "primary"]);
+            this.pagesAttaches.push(
+                new DynamicDomAttach(this.root, pageDiv, {
+                    attachClass: "visible",
+                })
+            );
+            for (let j = 0; j < page.length; j++) {
+                const metaBuilding = gMetaBuildingRegistry.findByClass(page[j]);
+                let rawBinding = KEYMAPPINGS.buildings[metaBuilding.getId() + "_" + this.layer];
+                if (!rawBinding) {
+                    rawBinding = KEYMAPPINGS.buildings[metaBuilding.getId()];
+                }
+
+                const binding = actionMapper.getBinding(rawBinding);
+
+                const itemContainer = makeDiv(pageDiv, null, ["building"]);
+                itemContainer.setAttribute("data-icon", "building_icons/" + metaBuilding.getId() + ".png");
+                itemContainer.setAttribute("data-id", metaBuilding.getId());
+
+                binding.add(() => this.selectBuildingForPlacement(metaBuilding));
+
+                this.trackClicks(itemContainer, () => this.selectBuildingForPlacement(metaBuilding), {
+                    clickSound: null,
+                });
+
+                this.buildingHandles[metaBuilding.id] = {
+                    metaBuilding,
+                    element: itemContainer,
+                    unlocked: false,
+                    selected: false,
+                    index: j,
+                    page: i,
+                };
+            }
         }
 
         this.root.hud.signals.selectedPlacementBuildingChanged.add(
@@ -114,6 +186,7 @@ export class HUDBaseToolbar extends BaseHUDPart {
         });
         this.lastSelectedIndex = 0;
         actionMapper.getBinding(KEYMAPPINGS.placement.cycleBuildings).add(this.cycleBuildings, this);
+        this.changePage(0);
     }
 
     /**
@@ -127,15 +200,17 @@ export class HUDBaseToolbar extends BaseHUDPart {
             let recomputeSecondaryToolbarVisibility = false;
             for (const buildingId in this.buildingHandles) {
                 const handle = this.buildingHandles[buildingId];
+                if (handle.page !== this.pageIndex) continue;
+
                 const newStatus = handle.metaBuilding.getIsUnlocked(this.root);
                 if (handle.unlocked !== newStatus) {
                     handle.unlocked = newStatus;
                     handle.element.classList.toggle("unlocked", newStatus);
-                    recomputeSecondaryToolbarVisibility = true;
+                    //recomputeSecondaryToolbarVisibility = true;
                 }
             }
 
-            if (recomputeSecondaryToolbarVisibility && this.secondaryDomAttach) {
+            /*if (recomputeSecondaryToolbarVisibility && this.secondaryDomAttach) {
                 let anyUnlocked = false;
                 for (let i = 0; i < this.secondaryBuildings.length; ++i) {
                     const metaClass = gMetaBuildingRegistry.findByClass(this.secondaryBuildings[i]);
@@ -146,7 +221,7 @@ export class HUDBaseToolbar extends BaseHUDPart {
                 }
 
                 this.secondaryDomAttach.update(anyUnlocked);
-            }
+            }*/
         }
     }
 
@@ -154,8 +229,7 @@ export class HUDBaseToolbar extends BaseHUDPart {
      * Cycles through all buildings
      */
     cycleBuildings() {
-        const visible = this.visibilityCondition();
-        if (!visible) {
+        if (!this.visibilityCondition()) {
             return;
         }
 
@@ -224,5 +298,23 @@ export class HUDBaseToolbar extends BaseHUDPart {
         this.root.soundProxy.playUiClick();
         this.root.hud.signals.buildingSelectedForPlacement.dispatch(metaBuilding);
         this.onSelectedPlacementBuildingChanged(metaBuilding);
+    }
+
+    changePage(index) {
+        index = clamp(index, 0, this.pages.length - 1);
+        if (index === this.pageIndex) return;
+
+        this.pageIndex = index;
+
+        this.buttons.up.setAttribute("disabled", "");
+        this.buttons.down.setAttribute("disabled", "");
+
+        if (this.pageIndex === 0) this.buttons.up.setAttribute("disabled", "disabled");
+        else if (this.pageIndex === this.pages.length) this.buttons.down.setAttribute("disabled", "disabled");
+
+        for (let i = 0; i < this.pagesAttaches.length; i++) {
+            const attach = this.pagesAttaches[i];
+            attach.update(i === this.pageIndex);
+        }
     }
 }
