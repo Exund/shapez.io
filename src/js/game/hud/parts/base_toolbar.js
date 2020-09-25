@@ -38,6 +38,7 @@ export class HUDBaseToolbar extends BaseHUDPart {
         this.layer = layer;
         this.pages = pages;
         this.pages = [primaryBuildings, secondaryBuildings];
+        this.pages = this.pages.filter(p => p.length);
         /** @type {Array<DynamicDomAttach>} */
         this.pagesAttaches = [];
         this.pageIndex = -1;
@@ -82,8 +83,8 @@ export class HUDBaseToolbar extends BaseHUDPart {
             const up = makeButton(pagesController, ["button", "styledButton", "up"]);
             const down = makeButton(pagesController, ["button", "styledButton", "down"]);
 
-            this.trackClicks(up, () => this.changePage(this.pageIndex - 1));
-            this.trackClicks(down, () => this.changePage(this.pageIndex + 1));
+            this.trackClicks(up, () => !up.disabled && this.changePage(this.pageIndex - 1));
+            this.trackClicks(down, () => !down.disabled && this.changePage(this.pageIndex + 1));
 
             this.buttons.up = up;
             this.buttons.down = down;
@@ -306,11 +307,14 @@ export class HUDBaseToolbar extends BaseHUDPart {
 
         this.pageIndex = index;
 
-        this.buttons.up.setAttribute("disabled", "");
-        this.buttons.down.setAttribute("disabled", "");
+        if (this.buttons.up) {
+            this.buttons.up.removeAttribute("disabled");
+            this.buttons.down.removeAttribute("disabled");
 
-        if (this.pageIndex === 0) this.buttons.up.setAttribute("disabled", "disabled");
-        else if (this.pageIndex === this.pages.length) this.buttons.down.setAttribute("disabled", "disabled");
+            if (this.pageIndex === 0) this.buttons.up.setAttribute("disabled", "disabled");
+            else if (this.pageIndex === this.pages.length - 1)
+                this.buttons.down.setAttribute("disabled", "disabled");
+        }
 
         for (let i = 0; i < this.pagesAttaches.length; i++) {
             const attach = this.pagesAttaches[i];
