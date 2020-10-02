@@ -1,9 +1,11 @@
-import { globalConfig } from "../core/config";
+import { globalConfig, IS_DEMO } from "../core/config";
+import { RandomNumberGenerator } from "../core/rng";
 import { clamp, findNiceIntegerValue, randomChoice, randomInt } from "../core/utils";
 import { BasicSerializableObject, types } from "../savegame/serialization";
 import { enumColors } from "./colors";
 import { allShapeData } from "./shapes";
 import { enumItemProcessorTypes } from "./components/item_processor";
+import { enumAnalyticsDataSource } from "./production_analytics";
 import { GameRoot } from "./root";
 import { ShapeDefinition, ShapeLayer } from "./shape_definition";
 import { enumHubGoalRewards, tutorialGoals } from "./tutorial_goals";
@@ -20,12 +22,6 @@ export class HubGoals extends BasicSerializableObject {
             level: types.uint,
             storedShapes: types.keyValueMap(types.uint),
             upgradeLevels: types.keyValueMap(types.uint),
-
-            currentGoal: types.structured({
-                definition: types.knownType(ShapeDefinition),
-                required: types.uint,
-                reward: types.nullable(types.enum(enumHubGoalRewards)),
-            }),
         };
     }
 
@@ -33,6 +29,10 @@ export class HubGoals extends BasicSerializableObject {
         const errorCode = super.deserialize(data);
         if (errorCode) {
             return errorCode;
+        }
+
+        if (IS_DEMO) {
+            this.level = Math.min(this.level, tutorialGoals.length);
         }
 
         // Compute gained rewards
@@ -55,15 +55,7 @@ export class HubGoals extends BasicSerializableObject {
         }
 
         // Compute current goal
-        const goal = tutorialGoals[this.level - 1];
-        if (goal) {
-            this.currentGoal = {
-                /** @type {ShapeDefinition} */
-                definition: this.root.shapeDefinitionMgr.getShapeFromShortKey(goal.shape),
-                required: goal.required,
-                reward: goal.reward,
-            };
-        }
+        this.computeNextGoal();
     }
 
     /**
@@ -94,6 +86,11 @@ export class HubGoals extends BasicSerializableObject {
          */
         this.upgradeLevels = {};
 
+        // Reset levels
+        for (const key in UPGRADES) {
+            this.upgradeLevels[key] = 0;
+        }
+
         /**
          * Stores the improvements for all upgrades
          * @type {Object<string, number>}
@@ -103,7 +100,7 @@ export class HubGoals extends BasicSerializableObject {
             this.upgradeImprovements[key] = 1;
         }
 
-        this.createNextGoal();
+        this.computeNextGoal();
 
         // Allow quickly switching goals in dev mode
         if (G_IS_DEV) {
@@ -111,11 +108,21 @@ export class HubGoals extends BasicSerializableObject {
                 if (ev.key === "b") {
                     // root is not guaranteed to exist within ~0.5s after loading in
                     if (this.root && this.root.app && this.root.app.gameAnalytics) {
-                        this.onGoalCompleted();
+                        if (!this.isEndOfDemoReached()) {
+                            this.onGoalCompleted();
+                        }
                     }
                 }
             });
         }
+    }
+
+    /**
+     * Returns whether the end of the demo is reached
+     * @returns {boolean}
+     */
+    isEndOfDemoReached() {
+        return IS_DEMO && this.level >= tutorialGoals.length;
     }
 
     /**
@@ -152,6 +159,15 @@ export class HubGoals extends BasicSerializableObject {
      * Returns how much of the current goal was already delivered
      */
     getCurrentGoalDelivered() {
+        if (this.currentGoal.throughputOnly) {
+            return (
+                this.root.productionAnalytics.getCurrentShapeRate(
+                    enumAnalyticsDataSource.delivered,
+                    this.currentGoal.definition
+                ) / globalConfig.analyticsSliceDurationSeconds
+            );
+        }
+
         return this.getShapesStored(this.currentGoal.definition);
     }
 
@@ -186,36 +202,39 @@ export class HubGoals extends BasicSerializableObject {
         this.root.signals.shapeDelivered.dispatch(definition);
 
         // Check if we have enough for the next level
-        const targetHash = this.currentGoal.definition.getHash();
         if (
-            this.storedShapes[targetHash] >= this.currentGoal.required ||
+            this.getCurrentGoalDelivered() >= this.currentGoal.required ||
             (G_IS_DEV && globalConfig.debug.rewardsInstant)
         ) {
-            this.onGoalCompleted();
+            if (!this.isEndOfDemoReached()) {
+                this.onGoalCompleted();
+            }
         }
     }
 
     /**
      * Creates the next goal
      */
-    createNextGoal() {
+    computeNextGoal() {
         const storyIndex = this.level - 1;
         if (storyIndex < tutorialGoals.length) {
-            const { shape, required, reward } = tutorialGoals[storyIndex];
+            const { shape, required, reward, throughputOnly } = tutorialGoals[storyIndex];
             this.currentGoal = {
                 /** @type {ShapeDefinition} */
                 definition: this.root.shapeDefinitionMgr.getShapeFromShortKey(shape),
                 required,
                 reward,
+                throughputOnly,
             };
             return;
         }
 
+        const required = Math.min(200, 4 + (this.level - 27) * 0.25);
         this.currentGoal = {
-            /** @type {ShapeDefinition} */
-            definition: this.createRandomShape(),
-            required: findNiceIntegerValue(5000 + Math.pow(this.level * 2000, 0.75)),
+            definition: this.computeFreeplayShape(this.level),
+            required,
             reward: enumHubGoalRewards.no_reward_freeplay,
+            throughputOnly: true,
         };
     }
 
@@ -228,7 +247,7 @@ export class HubGoals extends BasicSerializableObject {
 
         this.root.app.gameAnalytics.handleLevelCompleted(this.level);
         ++this.level;
-        this.createNextGoal();
+        this.computeNextGoal();
 
         this.root.signals.storyGoalCompleted.dispatch(this.level - 1, reward);
     }
@@ -250,6 +269,11 @@ export class HubGoals extends BasicSerializableObject {
 
         if (currentLevel >= tiers.length) {
             // Max level
+            return false;
+        }
+
+        if (IS_DEMO && currentLevel >= 4) {
+            // DEMO
             return false;
         }
 
@@ -322,15 +346,85 @@ export class HubGoals extends BasicSerializableObject {
     }
 
     /**
+     * Picks random colors which are close to each other
+     * @param {RandomNumberGenerator} rng
+     */
+    generateRandomColorSet(rng, allowUncolored = false) {
+        const colorWheel = [
+            enumColors.red,
+            enumColors.yellow,
+            enumColors.green,
+            enumColors.cyan,
+            enumColors.blue,
+            enumColors.purple,
+            enumColors.red,
+            enumColors.yellow,
+        ];
+
+        const universalColors = [enumColors.white];
+        if (allowUncolored) {
+            universalColors.push(enumColors.uncolored);
+        }
+        const index = rng.nextIntRangeInclusive(0, colorWheel.length - 3);
+        const pickedColors = colorWheel.slice(index, index + 3);
+        pickedColors.push(rng.choice(universalColors));
+        return pickedColors;
+    }
+
+    /**
+     * Creates a (seeded) random shape
+     * @param {number} level
      * @returns {ShapeDefinition}
      */
-    createRandomShape() {
+    computeFreeplayShape(level) {
         const layerCount = clamp(this.level / 25, 2, 4);
-        /** @type {Array<ShapeLayer>} */
+
+        /** @type {Array<import("./shape_definition").ShapeLayer>} */
         let layers = [];
 
-        const randomColor = () => randomChoice(Object.values(enumColors));
-        const randomShape = () => randomChoice(Object.values(allShapeData).map(d => d.id));
+        const rng = new RandomNumberGenerator(this.root.map.seed + "/" + level);
+
+        const colors = this.generateRandomColorSet(rng, level > 35);
+
+        let pickedSymmetry = null; // pairs of quadrants that must be the same
+        let availableShapes = [enumSubShape.rect, enumSubShape.circle, enumSubShape.star];
+        if (rng.next() < 0.5) {
+            pickedSymmetry = [
+                // radial symmetry
+                [0, 2],
+                [1, 3],
+            ];
+            availableShapes.push(enumSubShape.windmill); // windmill looks good only in radial symmetry
+        } else {
+            const symmetries = [
+                [
+                    // horizontal axis
+                    [0, 3],
+                    [1, 2],
+                ],
+                [
+                    // vertical axis
+                    [0, 1],
+                    [2, 3],
+                ],
+                [
+                    // diagonal axis
+                    [0, 2],
+                    [1],
+                    [3],
+                ],
+                [
+                    // other diagonal axis
+                    [1, 3],
+                    [0],
+                    [2],
+                ],
+            ];
+            pickedSymmetry = rng.choice(symmetries);
+        }
+
+        const randomColor = () => rng.choice(Object.values(enumColors)/*colors*/);
+        const randomShape = () => rng.choice(Object.values(allShapeData).map(d => d.id));
 
         let anyIsMissingTwo = false;
 
@@ -338,23 +432,24 @@ export class HubGoals extends BasicSerializableObject {
             /** @type {ShapeLayer} */
             const layer = [null, null, null, null];
 
-            for (let quad = 0; quad < 4; ++quad) {
-                layer[quad] = {
-                    subShape: randomShape(),
-                    color: randomColor(),
-                };
-            }
-
-            // Sometimes shapes are missing
-            if (Math.random() > 0.85) {
-                layer[randomInt(0, 3)] = null;
+            for (let j = 0; j < pickedSymmetry.length; ++j) {
+                const group = pickedSymmetry[j];
+                const shape = randomShape();
+                const color = randomColor();
+                for (let k = 0; k < group.length; ++k) {
+                    const quad = group[k];
+                    layer[quad] = {
+                        subShape: shape,
+                        color,
+                    };
+                }
             }
 
             // Sometimes they actually are missing *two* ones!
             // Make sure at max only one layer is missing it though, otherwise we could
             // create an uncreateable shape
-            if (Math.random() > 0.95 && !anyIsMissingTwo) {
-                layer[randomInt(0, 3)] = null;
+            if (level > 75 && rng.next() > 0.95 && !anyIsMissingTwo) {
+                layer[rng.nextIntRange(0, 4)] = null;
                 anyIsMissingTwo = true;
             }
 

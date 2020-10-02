@@ -44,6 +44,10 @@ import { HUDWireInfo } from "./parts/wire_info";
 import { HUDLeverToggle } from "./parts/lever_toggle";
 import { HUDLayerPreview } from "./parts/layer_preview";
 import { HUDMinerHighlight } from "./parts/miner_highlight";
+import { HUDBetaOverlay } from "./parts/beta_overlay";
+import { HUDPerformanceWarning } from "./parts/performance_warning";
+import { HUDStandaloneAdvantages } from "./parts/standalone_advantages";
+import { HUDCatMemes } from "./parts/cat_memes";
 
 export class GameHUD {
     /**
@@ -75,7 +79,6 @@ export class GameHUD {
             pinnedShapes: new HUDPinnedShapes(this.root),
             notifications: new HUDNotifications(this.root),
             settingsMenu: new HUDSettingsMenu(this.root),
-            // betaOverlay: new HUDBetaOverlay(this.root),
             debugInfo: new HUDDebugInfo(this.root),
             dialogs: new HUDModalDialogs(this.root),
             screenshotExporter: new HUDScreenshotExporter(this.root),
@@ -85,6 +88,7 @@ export class GameHUD {
             layerPreview: new HUDLayerPreview(this.root),
 
             minerHighlight: new HUDMinerHighlight(this.root),
+            performanceWarning: new HUDPerformanceWarning(this.root),
 
             // Typing hints
             /* typehints:start */
@@ -114,6 +118,8 @@ export class GameHUD {
 
         if (IS_DEMO) {
             this.parts.watermark = new HUDWatermark(this.root);
+            this.parts.standaloneAdvantages = new HUDStandaloneAdvantages(this.root);
+            this.parts.catMemes = new HUDCatMemes(this.root);
         }
 
         if (G_IS_DEV && globalConfig.debug.renderChanges) {
@@ -135,6 +141,10 @@ export class GameHUD {
 
         if (queryParamOptions.sandboxMode || G_IS_DEV) {
             this.parts.sandboxController = new HUDSandboxController(this.root);
+        }
+
+        if (!G_IS_RELEASE && !G_IS_DEV) {
+            this.parts.betaOverlay = new HUDBetaOverlay(this.root);
         }
 
         const frag = document.createDocumentFragment();

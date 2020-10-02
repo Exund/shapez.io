@@ -13,6 +13,9 @@ import { MetaStackerBuilding } from "../../buildings/stacker";
 import { MetaTrashBuilding } from "../../buildings/trash";
 import { MetaUndergroundBeltBuilding } from "../../buildings/underground_belt";
 import { HUDBaseToolbar } from "./base_toolbar";
+import { MetaStorageBuilding } from "../../buildings/storage";
+import { MetaItemProducerBuilding } from "../../buildings/item_producer";
+import { queryParamOptions } from "../../../core/query_parameters";
 
 /**
  * @type {Array<typeof MetaBuilding>}
@@ -28,19 +31,23 @@ export const supportedBuildings = [
     MetaMixerBuilding,
     MetaPainterBuilding,
     MetaTrashBuilding,
-    MetaLeverBuilding,
-    MetaFilterBuilding,
-    MetaDisplayBuilding,
-    MetaReaderBuilding,
-];
+    ...(queryParamOptions.sandboxMode || G_IS_DEV ? [MetaItemProducerBuilding] : []),
+]
 
 export class HUDBuildingsToolbar extends HUDBaseToolbar {
     constructor(root) {
         super(root, {
-            supportedBuildings,
+            primaryBuildings: supportedBuildings,
+            secondaryBuildings: [
+                MetaStorageBuilding,
+                MetaReaderBuilding,
+                MetaLeverBuilding,
+                MetaFilterBuilding,
+                MetaDisplayBuilding,
+            ],
             visibilityCondition: () =>
                 !this.root.camera.getIsMapOverlayActive() && this.root.currentLayer === "regular",
-            htmlElementId: "ingame_HUD_buildings_toolbar",
+            htmlElementId: "ingame_HUD_BuildingsToolbar",
         });
     }
 }

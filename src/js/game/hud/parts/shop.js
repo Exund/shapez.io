@@ -90,17 +90,15 @@ export class HUDShop extends BaseHUDPart {
                 // Max level
                 handle.elemDescription.innerText = T.ingame.shop.maximumLevel.replace(
                     "<currentMult>",
-                    currentTierMultiplier.toString()
+                    formatBigNumber(currentTierMultiplier)
                 );
                 continue;
             }
 
             // Set description
             handle.elemDescription.innerText = T.shopUpgrades[upgradeId].description
-                .replace("<currentMult>", currentTierMultiplier.toString())
-                .replace("<newMult>", (currentTierMultiplier + tierHandle.improvement).toString())
-                // Backwards compatibility
-                .replace("<gain>", (tierHandle.improvement * 100.0).toString());
+                .replace("<currentMult>", formatBigNumber(currentTierMultiplier))
+                .replace("<newMult>", formatBigNumber(currentTierMultiplier + tierHandle.improvement));
 
             tierHandle.required.forEach(({ shape, amount }) => {
                 const container = makeDiv(handle.elemRequirements, null, ["requirement"]);
@@ -207,8 +205,6 @@ export class HUDShop extends BaseHUDPart {
     }
 
     cleanup() {
-        document.body.classList.remove("ingameDialogOpen");
-
         // Cleanup detectors
         for (const upgradeId in this.upgradeToElements) {
             const handle = this.upgradeToElements[upgradeId];
@@ -224,15 +220,12 @@ export class HUDShop extends BaseHUDPart {
 
     show() {
         this.visible = true;
-        document.body.classList.add("ingameDialogOpen");
-        // this.background.classList.add("visible");
         this.root.app.inputMgr.makeSureAttachedAndOnTop(this.inputReciever);
         this.rerenderFull();
     }
 
     close() {
         this.visible = false;
-        document.body.classList.remove("ingameDialogOpen");
         this.root.app.inputMgr.makeSureDetached(this.inputReciever);
         this.update();
     }

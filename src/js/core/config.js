@@ -20,9 +20,12 @@ export const THIRDPARTY_URLS = {
     discord: "https://discord.gg/HN7EVzV",
     github: "https://github.com/tobspr/shapez.io",
     reddit: "https://www.reddit.com/r/shapezio",
+    shapeViewer: "https://viewer.shapez.io",
 
     standaloneStorePage: "https://store.steampowered.com/app/1318690/shapezio/",
 };
+
+export const A_B_TESTING_LINK_TYPE = Math.random() > 0.5 ? "steam_1_pr" : "steam_2_npr";
 
 export const globalConfig = {
     // Size of a single tile in Pixels.
@@ -71,9 +74,9 @@ export const globalConfig = {
         rotater180: 1 / 1,
         painter: 1 / 6,
         painterDouble: 1 / 8,
-        painterQuad: 1 / 8,
+        painterQuad: 1 / 2,
         mixer: 1 / 5,
-        stacker: 1 / 6,
+        stacker: 1 / 8,
     },
 
     // Zooming

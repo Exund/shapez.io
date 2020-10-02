@@ -6,7 +6,7 @@ import { GameRoot } from "../game/root";
 
 import { newEmptyMap, clamp } from "../core/utils";
 import { createLogger } from "../core/logging";
-import { globalConfig } from "../core/config";
+import { globalConfig, IS_DEMO } from "../core/config";
 
 const logger = createLogger("sound");
 
@@ -25,10 +25,11 @@ export const SOUNDS = {
     destroyBuilding: "destroy_building",
     placeBuilding: "place_building",
     placeBelt: "place_belt",
+    copy: "copy",
 };
 
 export const MUSIC = {
-    theme: G_IS_STANDALONE ? "theme-full" : "theme-short",
+    theme: IS_DEMO ? "theme-short" : "theme-full",
     menu: "menu",
 };
 

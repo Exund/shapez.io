@@ -26,11 +26,8 @@ export default {
     _disableZoomLimits: "Allow to zoom freely without limits",
     disableZoomLimits: false,
     // -----------------------------------------------------------------------------------
-    _showChunkBorders: "Shows a border arround every chunk",
-    showChunkBorders: false,
-    // -----------------------------------------------------------------------------------
-    _rewardsInstant: "All rewards can be unlocked by passing just 1 of any shape",
     rewardsInstant: false,
+    _rewardsInstant: "All rewards can be unlocked by passing just 1 of any shape",
     // -----------------------------------------------------------------------------------
     _allBuildingsUnlocked: "Unlocks all buildings",
     allBuildingsUnlocked: false,
@@ -109,6 +106,9 @@ export default {
     // -----------------------------------------------------------------------------------
     // Allows manual ticking
     // manualTickOnly: true,
+    // -----------------------------------------------------------------------------------
+    // Disables slow asserts, useful for debugging performance
+    // disableSlowAsserts: true,
     // -----------------------------------------------------------------------------------
     /* dev:end */
 };
