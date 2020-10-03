@@ -2,11 +2,7 @@
 
 "sprites/belt/built/forward_0.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1867,"y":593,"w":116,"h":144},
-=======
-	"frame": {"x":305,"y":1895,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":821,"y":1461,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -14,11 +10,7 @@
 },
 "sprites/belt/built/forward_1.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1241,"y":1197,"w":116,"h":144},
-=======
-	"frame": {"x":1885,"y":308,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":821,"y":1611,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -26,11 +18,7 @@
 },
 "sprites/belt/built/forward_2.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1558,"y":753,"w":116,"h":144},
-=======
-	"frame": {"x":841,"y":1579,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1032,"y":716,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -38,11 +26,7 @@
 },
 "sprites/belt/built/forward_3.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1555,"y":903,"w":116,"h":144},
-=======
-	"frame": {"x":861,"y":1731,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1065,"y":1431,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -50,11 +34,7 @@
 },
 "sprites/belt/built/forward_4.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1562,"y":1053,"w":116,"h":144},
-=======
-	"frame": {"x":863,"y":1883,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1065,"y":1581,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -62,11 +42,7 @@
 },
 "sprites/belt/built/forward_5.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1680,"y":753,"w":116,"h":144},
-=======
-	"frame": {"x":951,"y":1061,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1086,"y":1731,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -74,11 +50,7 @@
 },
 "sprites/belt/built/forward_6.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1677,"y":903,"w":116,"h":144},
-=======
-	"frame": {"x":985,"y":1731,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1094,"y":1881,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -86,11 +58,7 @@
 },
 "sprites/belt/built/forward_7.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1684,"y":1053,"w":116,"h":144},
-=======
-	"frame": {"x":987,"y":1883,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1187,"y":1407,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -98,11 +66,7 @@
 },
 "sprites/belt/built/forward_8.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1802,"y":743,"w":116,"h":144},
-=======
-	"frame": {"x":1090,"y":1579,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1187,"y":1557,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -110,11 +74,7 @@
 },
 "sprites/belt/built/forward_9.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1924,"y":743,"w":116,"h":144},
-=======
-	"frame": {"x":1109,"y":1731,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1208,"y":1707,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -122,11 +82,7 @@
 },
 "sprites/belt/built/forward_10.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1363,"y":1195,"w":116,"h":144},
-=======
-	"frame": {"x":1909,"y":612,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":943,"y":1443,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -134,11 +90,7 @@
 },
 "sprites/belt/built/forward_11.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":845,"y":1548,"w":116,"h":144},
-=======
-	"frame": {"x":675,"y":1129,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":943,"y":1593,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -146,11 +98,7 @@
 },
 "sprites/belt/built/forward_12.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1436,"y":753,"w":116,"h":144},
-=======
-	"frame": {"x":675,"y":1281,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":964,"y":1743,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -158,11 +106,7 @@
 },
 "sprites/belt/built/forward_13.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1433,"y":903,"w":116,"h":144},
-=======
-	"frame": {"x":717,"y":1585,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":972,"y":1893,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -170,11 +114,7 @@
 },
 "sprites/belt/built/left_0.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":569,"y":1845,"w":130,"h":130},
-=======
-	"frame": {"x":1247,"y":1336,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1281,"y":1170,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -182,11 +122,7 @@
 },
 "sprites/belt/built/left_1.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1426,"y":1053,"w":130,"h":130},
-=======
-	"frame": {"x":1269,"y":1474,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1417,"y":1170,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -194,11 +130,7 @@
 },
 "sprites/belt/built/left_2.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1893,"y":1189,"w":130,"h":130},
-=======
-	"frame": {"x":1385,"y":1336,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1581,"y":1559,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -206,11 +138,7 @@
 },
 "sprites/belt/built/left_3.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1241,"y":1347,"w":130,"h":130},
-=======
-	"frame": {"x":1407,"y":1474,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1544,"y":1695,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -218,11 +146,7 @@
 },
 "sprites/belt/built/left_4.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1377,"y":1345,"w":130,"h":130},
-=======
-	"frame": {"x":1509,"y":1731,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1443,"y":1851,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -230,11 +154,7 @@
 },
 "sprites/belt/built/left_5.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1513,"y":1339,"w":130,"h":130},
-=======
-	"frame": {"x":1511,"y":1869,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1579,"y":1831,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -242,11 +162,7 @@
 },
 "sprites/belt/built/left_6.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1649,"y":1339,"w":130,"h":130},
-=======
-	"frame": {"x":1765,"y":763,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1680,"y":1695,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -254,11 +170,7 @@
 },
 "sprites/belt/built/left_7.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1785,"y":1339,"w":130,"h":130},
-=======
-	"frame": {"x":1903,"y":764,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1715,"y":1831,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -266,11 +178,7 @@
 },
 "sprites/belt/built/left_8.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1377,"y":1481,"w":130,"h":130},
-=======
-	"frame": {"x":1456,"y":852,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1590,"y":450,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -278,11 +186,7 @@
 },
 "sprites/belt/built/left_9.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1802,"y":1475,"w":130,"h":130},
-=======
-	"frame": {"x":1740,"y":901,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1449,"y":567,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -290,11 +194,7 @@
 },
 "sprites/belt/built/left_10.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1485,"y":1203,"w":130,"h":130},
-=======
-	"frame": {"x":1233,"y":1731,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1309,"y":1565,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -302,11 +202,7 @@
 },
 "sprites/belt/built/left_11.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1621,"y":1203,"w":130,"h":130},
-=======
-	"frame": {"x":1235,"y":1869,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1443,"y":1423,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -314,11 +210,7 @@
 },
 "sprites/belt/built/left_12.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1757,"y":1203,"w":130,"h":130},
-=======
-	"frame": {"x":1371,"y":1731,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1445,"y":1559,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -326,11 +218,7 @@
 },
 "sprites/belt/built/left_13.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1806,"y":1053,"w":130,"h":130},
-=======
-	"frame": {"x":1373,"y":1869,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1579,"y":1423,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -338,11 +226,7 @@
 },
 "sprites/belt/built/right_0.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1799,"y":1611,"w":130,"h":130},
-=======
-	"frame": {"x":1878,"y":902,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1585,"y":586,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -350,11 +234,7 @@
 },
 "sprites/belt/built/right_1.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":294,"y":1885,"w":130,"h":130},
-=======
-	"frame": {"x":1317,"y":984,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1449,"y":703,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -362,11 +242,7 @@
 },
 "sprites/belt/built/right_2.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1239,"y":1483,"w":130,"h":130},
-=======
-	"frame": {"x":1416,"y":1128,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1651,"y":994,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -374,11 +250,7 @@
 },
 "sprites/belt/built/right_3.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":997,"y":1785,"w":130,"h":130},
-=======
-	"frame": {"x":1554,"y":1152,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1553,"y":1130,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -386,11 +258,7 @@
 },
 "sprites/belt/built/right_4.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1375,"y":1617,"w":130,"h":130},
-=======
-	"frame": {"x":1692,"y":1177,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1689,"y":1130,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -398,11 +266,7 @@
 },
 "sprites/belt/built/right_5.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1511,"y":1710,"w":130,"h":130},
-=======
-	"frame": {"x":1830,"y":1178,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1676,"y":1266,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -410,11 +274,7 @@
 },
 "sprites/belt/built/right_6.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1647,"y":1710,"w":130,"h":130},
-=======
-	"frame": {"x":1523,"y":1290,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1715,"y":1402,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -422,11 +282,7 @@
 },
 "sprites/belt/built/right_7.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1783,"y":1747,"w":130,"h":130},
-=======
-	"frame": {"x":1661,"y":1315,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1717,"y":1538,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -434,11 +290,7 @@
 },
 "sprites/belt/built/right_8.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1111,"y":1635,"w":130,"h":130},
-=======
-	"frame": {"x":1799,"y":1316,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1720,"y":858,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -446,11 +298,7 @@
 },
 "sprites/belt/built/right_9.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1133,"y":1771,"w":130,"h":130},
-=======
-	"frame": {"x":1658,"y":1453,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1787,"y":994,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -458,11 +306,7 @@
 },
 "sprites/belt/built/right_10.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":430,"y":1885,"w":130,"h":130},
-=======
-	"frame": {"x":1455,"y":990,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1585,"y":722,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -470,11 +314,7 @@
 },
 "sprites/belt/built/right_11.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":967,"y":1513,"w":130,"h":130},
-=======
-	"frame": {"x":1593,"y":1014,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1448,"y":839,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -482,11 +322,7 @@
 },
 "sprites/belt/built/right_12.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":975,"y":1649,"w":130,"h":130},
-=======
-	"frame": {"x":1731,"y":1039,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1584,"y":858,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -494,11 +330,7 @@
 },
 "sprites/belt/built/right_13.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1103,"y":1444,"w":130,"h":130},
-=======
-	"frame": {"x":1869,"y":1040,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1515,"y":994,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -554,11 +386,7 @@
 },
 "sprites/blueprints/belt_left.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1168,"y":1907,"w":130,"h":130},
-=======
-	"frame": {"x":1796,"y":1454,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1825,"y":1130,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -566,11 +394,7 @@
 },
 "sprites/blueprints/belt_right.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1269,"y":1753,"w":130,"h":130},
-=======
-	"frame": {"x":1649,"y":1591,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1812,"y":1266,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -578,11 +402,7 @@
 },
 "sprites/blueprints/belt_top.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1799,"y":903,"w":116,"h":144},
-=======
-	"frame": {"x":1111,"y":1883,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1216,"y":1857,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -598,11 +418,7 @@
 },
 "sprites/blueprints/constant_signal.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1921,"y":1325,"w":105,"h":127},
-=======
-	"frame": {"x":1545,"y":1428,"w":105,"h":127},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1851,"y":1402,"w":105,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":20,"y":0,"w":105,"h":130},
@@ -610,7 +426,7 @@
 },
 "sprites/blueprints/cutter-quad.png":
 {
-	"frame": {"x":5,"y":562,"w":548,"h":144},
+	"frame": {"x":6,"y":711,"w":525,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":24,"y":0,"w":525,"h":144},
@@ -618,11 +434,7 @@
 },
 "sprites/blueprints/cutter.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":4,"y":1589,"w":256,"h":144},
-=======
-	"frame": {"x":301,"y":714,"w":256,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":259,"y":1459,"w":256,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":17,"y":0,"w":256,"h":144},
@@ -630,11 +442,7 @@
 },
 "sprites/blueprints/display.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":841,"y":1698,"w":128,"h":136},
-=======
-	"frame": {"x":988,"y":910,"w":128,"h":136},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1309,"y":1423,"w":128,"h":136},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":8,"y":8,"w":128,"h":136},
@@ -642,7 +450,7 @@
 },
 "sprites/blueprints/filter.png":
 {
-	"frame": {"x":857,"y":309,"w":268,"h":144},
+	"frame": {"x":1090,"y":156,"w":268,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":16,"y":0,"w":268,"h":144},
@@ -658,11 +466,7 @@
 },
 "sprites/blueprints/lever.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1921,"y":893,"w":111,"h":129},
-=======
-	"frame": {"x":1787,"y":1592,"w":111,"h":129},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1726,"y":450,"w":100,"h":116},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":22,"y":9,"w":100,"h":116},
@@ -670,11 +474,7 @@
 },
 "sprites/blueprints/logic_gate-not.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1596,"y":603,"w":123,"h":144},
-=======
-	"frame": {"x":1884,"y":460,"w":123,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":563,"y":861,"w":123,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":11,"y":0,"w":123,"h":144},
@@ -682,23 +482,15 @@
 },
 "sprites/blueprints/logic_gate-or.png":
 {
-	"frame": {"x":566,"y":998,"w":144,"h":123},
+	"frame": {"x":550,"y":594,"w":144,"h":123},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":123},
 	"sourceSize": {"w":144,"h":144}
 },
-"sprites/blueprints/logic_gate-transistor.png":
-{
-	"frame": {"x":554,"y":1430,"w":102,"h":144},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":102,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
 "sprites/blueprints/logic_gate-xor.png":
 {
-	"frame": {"x":1841,"y":157,"w":144,"h":143},
+	"frame": {"x":710,"y":455,"w":144,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":143},
@@ -706,7 +498,7 @@
 },
 "sprites/blueprints/logic_gate.png":
 {
-	"frame": {"x":1150,"y":764,"w":144,"h":133},
+	"frame": {"x":700,"y":604,"w":144,"h":133},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":133},
@@ -714,11 +506,7 @@
 },
 "sprites/blueprints/miner-chainable.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":522,"y":1159,"w":136,"h":143},
-=======
-	"frame": {"x":844,"y":910,"w":136,"h":143},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1304,"y":455,"w":136,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":136,"h":143},
@@ -726,11 +514,7 @@
 },
 "sprites/blueprints/miner.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1725,"y":593,"w":136,"h":143},
-=======
-	"frame": {"x":531,"y":1129,"w":136,"h":143},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1002,"y":1134,"w":136,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":136,"h":143},
@@ -738,11 +522,7 @@
 },
 "sprites/blueprints/mixer.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":298,"y":859,"w":261,"h":144},
-=======
-	"frame": {"x":5,"y":1600,"w":261,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1637,"y":156,"w":261,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":13,"y":0,"w":261,"h":144},
@@ -750,7 +530,7 @@
 },
 "sprites/blueprints/painter-double.png":
 {
-	"frame": {"x":561,"y":309,"w":288,"h":287},
+	"frame": {"x":6,"y":861,"w":288,"h":280},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":288,"h":280},
@@ -758,7 +538,7 @@
 },
 "sprites/blueprints/painter-mirrored.png":
 {
-	"frame": {"x":1129,"y":156,"w":288,"h":144},
+	"frame": {"x":1103,"y":6,"w":288,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":288,"h":144},
@@ -766,7 +546,7 @@
 },
 "sprites/blueprints/painter-quad.png":
 {
-	"frame": {"x":561,"y":5,"w":560,"h":144},
+	"frame": {"x":6,"y":561,"w":538,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":12,"y":0,"w":538,"h":144},
@@ -774,7 +554,7 @@
 },
 "sprites/blueprints/painter.png":
 {
-	"frame": {"x":1685,"y":5,"w":288,"h":144},
+	"frame": {"x":560,"y":305,"w":288,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":288,"h":144},
@@ -782,11 +562,7 @@
 },
 "sprites/blueprints/reader.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":266,"y":1585,"w":141,"h":144},
-=======
-	"frame": {"x":274,"y":1591,"w":141,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":860,"y":455,"w":141,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":0,"w":141,"h":144},
@@ -794,7 +570,7 @@
 },
 "sprites/blueprints/rotater-ccw.png":
 {
-	"frame": {"x":274,"y":1743,"w":143,"h":144},
+	"frame": {"x":567,"y":1011,"w":143,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":143,"h":144},
@@ -802,7 +578,7 @@
 },
 "sprites/blueprints/rotater-rotate180.png":
 {
-	"frame": {"x":423,"y":1591,"w":142,"h":144},
+	"frame": {"x":692,"y":861,"w":143,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":143,"h":144},
@@ -810,58 +586,15 @@
 },
 "sprites/blueprints/rotater.png":
 {
-	"frame": {"x":425,"y":1743,"w":143,"h":144},
+	"frame": {"x":716,"y":1011,"w":143,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":143,"h":144},
 	"sourceSize": {"w":144,"h":144}
 },
-<<<<<<< HEAD
-=======
-"sprites/blueprints/splitter-compact-inverse.png":
-{
-	"frame": {"x":5,"y":1904,"w":142,"h":138},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":2,"w":142,"h":138},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/blueprints/splitter-compact-merge-inverse.png":
-{
-	"frame": {"x":155,"y":1904,"w":142,"h":138},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":2,"w":142,"h":138},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/blueprints/splitter-compact-merge.png":
-{
-	"frame": {"x":714,"y":1737,"w":139,"h":138},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":5,"y":2,"w":139,"h":138},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/blueprints/splitter-compact.png":
-{
-	"frame": {"x":716,"y":1883,"w":139,"h":138},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":5,"y":2,"w":139,"h":138},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/blueprints/splitter.png":
-{
-	"frame": {"x":301,"y":866,"w":257,"h":144},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":17,"y":0,"w":257,"h":144},
-	"sourceSize": {"w":288,"h":144}
-},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
 "sprites/blueprints/stacker.png":
 {
-	"frame": {"x":5,"y":1752,"w":261,"h":144},
+	"frame": {"x":300,"y":1011,"w":261,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":13,"y":0,"w":261,"h":144},
@@ -869,7 +602,7 @@
 },
 "sprites/blueprints/storage.png":
 {
-	"frame": {"x":5,"y":1008,"w":250,"h":288},
+	"frame": {"x":6,"y":1432,"w":247,"h":287},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":21,"y":1,"w":247,"h":287},
@@ -893,7 +626,7 @@
 },
 "sprites/blueprints/trash.png":
 {
-	"frame": {"x":1425,"y":156,"w":144,"h":144},
+	"frame": {"x":566,"y":1161,"w":144,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
@@ -901,11 +634,7 @@
 },
 "sprites/blueprints/underground_belt_entry-tier2.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":954,"y":1188,"w":138,"h":125},
-=======
-	"frame": {"x":948,"y":1213,"w":138,"h":125},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1904,"y":156,"w":138,"h":125},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":19,"w":138,"h":125},
@@ -913,11 +642,7 @@
 },
 "sprites/blueprints/underground_belt_entry.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":954,"y":1319,"w":138,"h":112},
-=======
-	"frame": {"x":408,"y":1471,"w":138,"h":112},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1904,"y":287,"w":138,"h":112},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":32,"w":138,"h":112},
@@ -925,11 +650,7 @@
 },
 "sprites/blueprints/underground_belt_exit-tier2.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1513,"y":1475,"w":139,"h":112},
-=======
-	"frame": {"x":261,"y":1471,"w":139,"h":112},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":686,"y":743,"w":139,"h":112},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":0,"w":139,"h":112},
@@ -937,31 +658,15 @@
 },
 "sprites/blueprints/underground_belt_exit.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1658,"y":1475,"w":138,"h":112},
-=======
-	"frame": {"x":1594,"y":894,"w":138,"h":112},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":988,"y":866,"w":138,"h":112},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":0,"w":138,"h":112},
 	"sourceSize": {"w":144,"h":144}
 },
-"sprites/blueprints/virtual_processor-analyzer.png":
-{
-	"frame": {"x":1429,"y":308,"w":144,"h":144},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
 "sprites/blueprints/virtual_processor-painter.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":711,"y":597,"w":130,"h":144},
-=======
-	"frame": {"x":717,"y":604,"w":130,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":865,"y":993,"w":130,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":130,"h":144},
@@ -969,35 +674,15 @@
 },
 "sprites/blueprints/virtual_processor-rotater.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1162,"y":897,"w":118,"h":144},
-=======
-	"frame": {"x":718,"y":908,"w":118,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":850,"y":605,"w":144,"h":141},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":3,"w":144,"h":141},
 	"sourceSize": {"w":144,"h":144}
 },
-"sprites/blueprints/virtual_processor-shapecompare.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":715,"y":897,"w":144,"h":133},
-=======
-	"frame": {"x":799,"y":1061,"w":144,"h":133},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":133},
-	"sourceSize": {"w":144,"h":144}
-},
 "sprites/blueprints/virtual_processor-stacker.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":569,"y":1695,"w":130,"h":144},
-=======
-	"frame": {"x":664,"y":1433,"w":130,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":866,"y":1143,"w":130,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":130,"h":144},
@@ -1005,7 +690,7 @@
 },
 "sprites/blueprints/virtual_processor-unstacker.png":
 {
-	"frame": {"x":1428,"y":460,"w":144,"h":144},
+	"frame": {"x":566,"y":1311,"w":144,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
@@ -1013,11 +698,7 @@
 },
 "sprites/blueprints/virtual_processor.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":847,"y":604,"w":144,"h":141},
-=======
-	"frame": {"x":855,"y":613,"w":144,"h":141},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":521,"y":1611,"w":144,"h":141},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":3,"w":144,"h":141},
@@ -1025,15 +706,7 @@
 },
 "sprites/blueprints/wire_tunnel.png":
 {
-	"frame": {"x":1581,"y":308,"w":144,"h":144},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/blueprints/wire-split.png":
-{
-	"frame": {"x":561,"y":604,"w":144,"h":82},
+	"frame": {"x":257,"y":1907,"w":138,"h":135},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":4,"w":138,"h":135},
@@ -1041,50 +714,10 @@
 },
 "sprites/buildings/analyzer.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":557,"y":1456,"w":82,"h":82},
-=======
-	"frame": {"x":1179,"y":1487,"w":82,"h":82},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":716,"y":1161,"w":144,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/blueprints/wire.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":1980,"y":1028,"w":20,"h":144},
-=======
-	"frame": {"x":2016,"y":902,"w":20,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":62,"y":0,"w":20,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/blueprints/wire_tunnel-coating.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":526,"y":1009,"w":33,"h":134},
-=======
-	"frame": {"x":1270,"y":905,"w":33,"h":134},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":56,"y":5,"w":33,"h":134},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/blueprints/wire_tunnel.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":807,"y":1320,"w":138,"h":135},
-=======
-	"frame": {"x":1124,"y":908,"w":138,"h":135},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":4,"y":4,"w":138,"h":135},
 	"sourceSize": {"w":144,"h":144}
 },
 "sprites/buildings/balancer-merger-inverse.png":
@@ -1129,11 +762,7 @@
 },
 "sprites/buildings/belt_left.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":569,"y":1845,"w":130,"h":130},
-=======
-	"frame": {"x":1247,"y":1336,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1281,"y":1170,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":14,"w":130,"h":130},
@@ -1141,11 +770,7 @@
 },
 "sprites/buildings/belt_right.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1799,"y":1611,"w":130,"h":130},
-=======
-	"frame": {"x":1878,"y":902,"w":130,"h":130},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1585,"y":586,"w":130,"h":130},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":14,"w":130,"h":130},
@@ -1153,11 +778,7 @@
 },
 "sprites/buildings/belt_top.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1867,"y":593,"w":116,"h":144},
-=======
-	"frame": {"x":305,"y":1895,"w":116,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":821,"y":1461,"w":116,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":116,"h":144},
@@ -1173,11 +794,7 @@
 },
 "sprites/buildings/constant_signal.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1938,"y":1458,"w":104,"h":127},
-=======
-	"frame": {"x":1937,"y":1316,"w":104,"h":127},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1853,"y":1538,"w":104,"h":129},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":20,"y":0,"w":104,"h":129},
@@ -1185,7 +802,7 @@
 },
 "sprites/buildings/cutter-quad.png":
 {
-	"frame": {"x":1129,"y":5,"w":548,"h":143},
+	"frame": {"x":560,"y":156,"w":524,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":25,"y":0,"w":524,"h":143},
@@ -1193,11 +810,7 @@
 },
 "sprites/buildings/cutter.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":258,"y":1307,"w":256,"h":143},
-=======
-	"frame": {"x":261,"y":1320,"w":256,"h":143},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":257,"y":1758,"w":256,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":17,"y":0,"w":256,"h":143},
@@ -1205,11 +818,7 @@
 },
 "sprites/buildings/display.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":841,"y":1840,"w":126,"h":135},
-=======
-	"frame": {"x":1183,"y":1051,"w":126,"h":135},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":401,"y":1907,"w":126,"h":135},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":9,"y":9,"w":126,"h":135},
@@ -1217,7 +826,7 @@
 },
 "sprites/buildings/filter.png":
 {
-	"frame": {"x":1153,"y":460,"w":267,"h":144},
+	"frame": {"x":1364,"y":156,"w":267,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":17,"y":0,"w":267,"h":144},
@@ -1225,7 +834,7 @@
 },
 "sprites/buildings/hub.png":
 {
-	"frame": {"x":5,"y":5,"w":548,"h":549},
+	"frame": {"x":6,"y":6,"w":548,"h":549},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":16,"w":548,"h":549},
@@ -1241,11 +850,7 @@
 },
 "sprites/buildings/lever.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1935,"y":1611,"w":109,"h":127},
-=======
-	"frame": {"x":1934,"y":1454,"w":109,"h":127},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1721,"y":586,"w":98,"h":114},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":23,"y":10,"w":98,"h":114},
@@ -1253,11 +858,7 @@
 },
 "sprites/buildings/logic_gate-not.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":715,"y":747,"w":122,"h":144},
-=======
-	"frame": {"x":718,"y":756,"w":122,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1281,"y":1020,"w":122,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":12,"y":0,"w":122,"h":144},
@@ -1265,27 +866,15 @@
 },
 "sprites/buildings/logic_gate-or.png":
 {
-	"frame": {"x":1614,"y":763,"w":143,"h":123},
+	"frame": {"x":1154,"y":692,"w":143,"h":123},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":143,"h":123},
 	"sourceSize": {"w":144,"h":144}
 },
-"sprites/buildings/logic_gate-transistor.png":
-{
-	"frame": {"x":1075,"y":1054,"w":100,"h":144},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":1,"y":0,"w":100,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
 "sprites/buildings/logic_gate-xor.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":997,"y":604,"w":143,"h":143},
-=======
-	"frame": {"x":1007,"y":613,"w":143,"h":143},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1004,"y":306,"w":143,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":143,"h":143},
@@ -1293,11 +882,7 @@
 },
 "sprites/buildings/logic_gate.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":715,"y":1036,"w":143,"h":132},
-=======
-	"frame": {"x":1094,"y":1206,"w":143,"h":132},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":537,"y":723,"w":143,"h":132},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":143,"h":132},
@@ -1305,7 +890,7 @@
 },
 "sprites/buildings/miner-chainable.png":
 {
-	"frame": {"x":531,"y":1280,"w":136,"h":142},
+	"frame": {"x":1002,"y":1283,"w":136,"h":142},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":136,"h":142},
@@ -1313,11 +898,7 @@
 },
 "sprites/buildings/miner.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":560,"y":1547,"w":136,"h":142},
-=======
-	"frame": {"x":573,"y":1585,"w":136,"h":142},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1137,"y":963,"w":136,"h":142},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":136,"h":142},
@@ -1325,7 +906,7 @@
 },
 "sprites/buildings/mixer.png":
 {
-	"frame": {"x":263,"y":1018,"w":260,"h":143},
+	"frame": {"x":300,"y":1161,"w":260,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":260,"h":143},
@@ -1333,7 +914,7 @@
 },
 "sprites/buildings/painter-double.png":
 {
-	"frame": {"x":5,"y":714,"w":288,"h":286},
+	"frame": {"x":6,"y":1147,"w":288,"h":279},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":288,"h":279},
@@ -1341,7 +922,7 @@
 },
 "sprites/buildings/painter-mirrored.png":
 {
-	"frame": {"x":1133,"y":308,"w":288,"h":144},
+	"frame": {"x":1397,"y":6,"w":288,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":288,"h":144},
@@ -1349,7 +930,7 @@
 },
 "sprites/buildings/painter-quad.png":
 {
-	"frame": {"x":561,"y":157,"w":560,"h":144},
+	"frame": {"x":560,"y":6,"w":537,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":13,"y":0,"w":537,"h":144},
@@ -1357,7 +938,7 @@
 },
 "sprites/buildings/painter.png":
 {
-	"frame": {"x":857,"y":461,"w":288,"h":144},
+	"frame": {"x":1691,"y":6,"w":288,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":288,"h":144},
@@ -1365,11 +946,7 @@
 },
 "sprites/buildings/reader.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":413,"y":1585,"w":141,"h":144},
-=======
-	"frame": {"x":429,"y":1895,"w":141,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":841,"y":843,"w":141,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":0,"w":141,"h":144},
@@ -1377,11 +954,7 @@
 },
 "sprites/buildings/rotater-ccw.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1289,"y":753,"w":141,"h":143},
-=======
-	"frame": {"x":1462,"y":612,"w":141,"h":143},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1153,"y":306,"w":141,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":0,"w":141,"h":143},
@@ -1389,11 +962,7 @@
 },
 "sprites/buildings/rotater-rotate180.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1286,"y":902,"w":141,"h":143},
-=======
-	"frame": {"x":1611,"y":612,"w":141,"h":143},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1007,"y":455,"w":141,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":0,"w":141,"h":143},
@@ -1401,62 +970,15 @@
 },
 "sprites/buildings/rotater.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1011,"y":1039,"w":141,"h":143},
-=======
-	"frame": {"x":1760,"y":612,"w":141,"h":143},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1300,"y":306,"w":141,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":0,"w":141,"h":143},
 	"sourceSize": {"w":144,"h":144}
 },
-<<<<<<< HEAD
-=======
-"sprites/buildings/splitter-compact-inverse.png":
-{
-	"frame": {"x":799,"y":1202,"w":141,"h":136},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":3,"w":141,"h":136},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/buildings/splitter-compact-merge-inverse.png":
-{
-	"frame": {"x":1000,"y":764,"w":142,"h":136},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":3,"w":142,"h":136},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/buildings/splitter-compact-merge.png":
-{
-	"frame": {"x":802,"y":1346,"w":139,"h":136},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":5,"y":3,"w":139,"h":136},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/buildings/splitter-compact.png":
-{
-	"frame": {"x":949,"y":1346,"w":139,"h":136},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":5,"y":3,"w":139,"h":136},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/buildings/splitter.png":
-{
-	"frame": {"x":1577,"y":157,"w":256,"h":143},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":17,"y":0,"w":256,"h":143},
-	"sourceSize": {"w":288,"h":144}
-},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
 "sprites/buildings/stacker.png":
 {
-	"frame": {"x":263,"y":1169,"w":260,"h":143},
+	"frame": {"x":300,"y":1310,"w":260,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":260,"h":143},
@@ -1464,7 +986,7 @@
 },
 "sprites/buildings/storage.png":
 {
-	"frame": {"x":5,"y":1304,"w":248,"h":288},
+	"frame": {"x":6,"y":1725,"w":245,"h":286},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":22,"y":2,"w":245,"h":286},
@@ -1488,7 +1010,7 @@
 },
 "sprites/buildings/trash.png":
 {
-	"frame": {"x":1580,"y":460,"w":144,"h":144},
+	"frame": {"x":716,"y":1311,"w":144,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
@@ -1496,11 +1018,7 @@
 },
 "sprites/buildings/underground_belt_entry-tier2.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1098,"y":1197,"w":137,"h":124},
-=======
-	"frame": {"x":1311,"y":852,"w":137,"h":124},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1299,"y":890,"w":137,"h":124},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":20,"w":137,"h":124},
@@ -1508,11 +1026,7 @@
 },
 "sprites/buildings/underground_belt_entry.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1098,"y":1327,"w":137,"h":111},
-=======
-	"frame": {"x":1214,"y":1612,"w":137,"h":111},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1390,"y":1306,"w":137,"h":111},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":33,"w":137,"h":111},
@@ -1520,11 +1034,7 @@
 },
 "sprites/buildings/underground_belt_exit-tier2.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1513,"y":1593,"w":137,"h":111},
-=======
-	"frame": {"x":1359,"y":1612,"w":137,"h":111},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1533,"y":1306,"w":137,"h":111},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":137,"h":111},
@@ -1532,31 +1042,15 @@
 },
 "sprites/buildings/underground_belt_exit.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1656,"y":1593,"w":137,"h":111},
-=======
-	"frame": {"x":1504,"y":1612,"w":137,"h":111},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1447,"y":450,"w":137,"h":111},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":137,"h":111},
 	"sourceSize": {"w":144,"h":144}
 },
-"sprites/buildings/virtual_processor-analyzer.png":
-{
-	"frame": {"x":1733,"y":308,"w":144,"h":144},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
 "sprites/buildings/virtual_processor-painter.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":705,"y":1688,"w":130,"h":144},
-=======
-	"frame": {"x":576,"y":1735,"w":130,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":866,"y":1293,"w":130,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":130,"h":144},
@@ -1564,35 +1058,15 @@
 },
 "sprites/buildings/virtual_processor-rotater.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1158,"y":1047,"w":117,"h":144},
-=======
-	"frame": {"x":965,"y":1579,"w":117,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":669,"y":1761,"w":144,"h":140},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":4,"w":144,"h":140},
 	"sourceSize": {"w":144,"h":144}
 },
-"sprites/buildings/virtual_processor-shapecompare.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":865,"y":897,"w":143,"h":133},
-=======
-	"frame": {"x":1096,"y":1346,"w":143,"h":133},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":1,"y":0,"w":143,"h":133},
-	"sourceSize": {"w":144,"h":144}
-},
 "sprites/buildings/virtual_processor-stacker.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":705,"y":1838,"w":130,"h":144},
-=======
-	"frame": {"x":578,"y":1887,"w":130,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1001,"y":984,"w":130,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":14,"y":0,"w":130,"h":144},
@@ -1600,11 +1074,7 @@
 },
 "sprites/buildings/virtual_processor-unstacker.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1446,"y":603,"w":144,"h":143},
-=======
-	"frame": {"x":1310,"y":612,"w":144,"h":143},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":519,"y":1758,"w":144,"h":143},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":1,"w":144,"h":143},
@@ -1612,89 +1082,20 @@
 },
 "sprites/buildings/virtual_processor.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":843,"y":751,"w":144,"h":140},
-=======
-	"frame": {"x":848,"y":762,"w":144,"h":140},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1154,"y":455,"w":144,"h":140},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":4,"w":144,"h":140},
 	"sourceSize": {"w":144,"h":144}
 },
-"sprites/buildings/wire-cross.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":561,"y":685,"w":144,"h":144},
-=======
-	"frame": {"x":1732,"y":460,"w":144,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/buildings/wire-split.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":565,"y":985,"w":144,"h":81},
-=======
-	"frame": {"x":802,"y":1490,"w":144,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":63,"w":144,"h":81},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/buildings/wire-turn.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":997,"y":1921,"w":81,"h":81},
-=======
-	"frame": {"x":1751,"y":1729,"w":81,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":63,"y":63,"w":81,"h":81},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/buildings/wire.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":2006,"y":1028,"w":18,"h":144},
-=======
-	"frame": {"x":1390,"y":1174,"w":18,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":63,"y":0,"w":18,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/buildings/wire_tunnel-coating.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":1942,"y":1028,"w":32,"h":134},
-=======
-	"frame": {"x":2007,"y":1054,"w":32,"h":134},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":56,"y":5,"w":32,"h":134},
-	"sourceSize": {"w":144,"h":144}
-},
 "sprites/buildings/wire_tunnel.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":702,"y":1548,"w":137,"h":134},
-=======
-	"frame": {"x":1245,"y":1194,"w":137,"h":134},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":682,"y":1907,"w":137,"h":134},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":5,"w":137,"h":134},
 	"sourceSize": {"w":144,"h":144}
 },
-<<<<<<< HEAD
 "sprites/colors/blue.png":
 {
 	"frame": {"x":1919,"y":685,"w":54,"h":49},
@@ -1761,12 +1162,7 @@
 },
 "sprites/debug/acceptor_slot.png":
 {
-	"frame": {"x":1269,"y":1889,"w":12,"h":12},
-=======
-"sprites/debug/acceptor_slot.png":
-{
-	"frame": {"x":1594,"y":852,"w":12,"h":12},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":841,"y":993,"w":12,"h":12},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":12},
@@ -1774,11 +1170,7 @@
 },
 "sprites/debug/ejector_slot.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1719,"y":555,"w":12,"h":12},
-=======
-	"frame": {"x":1317,"y":1174,"w":12,"h":12},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":866,"y":1443,"w":12,"h":12},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":12},
@@ -1786,11 +1178,7 @@
 },
 "sprites/misc/hub_direction_indicator.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1247,"y":1619,"w":48,"h":48},
-=======
-	"frame": {"x":718,"y":1060,"w":48,"h":48},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1032,"y":604,"w":48,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
@@ -1798,11 +1186,7 @@
 },
 "sprites/misc/processor_disabled.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1084,"y":1921,"w":78,"h":81},
-=======
-	"frame": {"x":1738,"y":1907,"w":78,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1916,"y":598,"w":78,"h":81},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":10,"y":10,"w":78,"h":81},
@@ -1810,11 +1194,7 @@
 },
 "sprites/misc/processor_disconnected.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1304,"y":1619,"w":65,"h":84},
-=======
-	"frame": {"x":1106,"y":1487,"w":65,"h":84},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1856,"y":830,"w":65,"h":84},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":17,"y":8,"w":65,"h":84},
@@ -1822,11 +1202,7 @@
 },
 "sprites/misc/reader_overlay.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":951,"y":1437,"w":104,"h":70},
-=======
-	"frame": {"x":1932,"y":1724,"w":104,"h":70},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1280,"y":1306,"w":104,"h":70},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":20,"y":38,"w":104,"h":70},
@@ -1834,11 +1210,7 @@
 },
 "sprites/misc/slot_bad_arrow.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1999,"y":161,"w":35,"h":35},
-=======
-	"frame": {"x":1235,"y":2007,"w":35,"h":35},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1216,"y":2007,"w":35,"h":35},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":2,"w":35,"h":35},
@@ -1846,11 +1218,7 @@
 },
 "sprites/misc/slot_good_arrow.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1999,"y":116,"w":35,"h":39},
-=======
-	"frame": {"x":1968,"y":1248,"w":35,"h":39},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1442,"y":975,"w":35,"h":39},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":0,"w":35,"h":39},
@@ -1858,11 +1226,7 @@
 },
 "sprites/misc/storage_overlay.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":566,"y":1981,"w":89,"h":44},
-=======
-	"frame": {"x":1317,"y":1122,"w":89,"h":44},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1828,"y":780,"w":89,"h":44},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":89,"h":44},
@@ -1870,11 +1234,7 @@
 },
 "sprites/misc/waypoint.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":661,"y":1981,"w":38,"h":48},
-=======
-	"frame": {"x":1879,"y":1914,"w":38,"h":48},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":988,"y":755,"w":38,"h":48},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":38,"h":48},
@@ -1882,11 +1242,7 @@
 },
 "sprites/wires/boolean_false.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1061,"y":1437,"w":31,"h":41},
-=======
-	"frame": {"x":1545,"y":1563,"w":31,"h":41},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1832,"y":448,"w":31,"h":41},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":9,"y":5,"w":31,"h":41},
@@ -1894,11 +1250,7 @@
 },
 "sprites/wires/boolean_true.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1999,"y":202,"w":22,"h":41},
-=======
-	"frame": {"x":1584,"y":1563,"w":22,"h":41},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":2017,"y":6,"w":22,"h":41},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":11,"y":5,"w":22,"h":41},
@@ -1906,11 +1258,7 @@
 },
 "sprites/wires/display/blue.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1391,"y":1927,"w":47,"h":47},
-=======
-	"frame": {"x":1840,"y":1729,"w":47,"h":47},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1983,"y":740,"w":47,"h":47},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":47,"h":47},
@@ -1918,11 +1266,7 @@
 },
 "sprites/wires/display/cyan.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1444,"y":1927,"w":47,"h":47},
-=======
-	"frame": {"x":1738,"y":1996,"w":47,"h":47},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1927,"y":795,"w":47,"h":47},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":47,"h":47},
@@ -1930,11 +1274,7 @@
 },
 "sprites/wires/display/green.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1370,"y":1980,"w":47,"h":47},
-=======
-	"frame": {"x":1793,"y":1996,"w":47,"h":47},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1927,"y":848,"w":47,"h":47},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":47,"h":47},
@@ -1942,11 +1282,7 @@
 },
 "sprites/wires/display/purple.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1423,"y":1980,"w":47,"h":47},
-=======
-	"frame": {"x":1840,"y":1859,"w":47,"h":47},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1927,"y":901,"w":47,"h":47},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":47,"h":47},
@@ -1954,11 +1290,7 @@
 },
 "sprites/wires/display/red.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1497,"y":1901,"w":47,"h":47},
-=======
-	"frame": {"x":1824,"y":1914,"w":47,"h":47},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1443,"y":1987,"w":47,"h":47},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":47,"h":47},
@@ -1966,11 +1298,7 @@
 },
 "sprites/wires/display/white.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1550,"y":1901,"w":47,"h":47},
-=======
-	"frame": {"x":1908,"y":1802,"w":47,"h":47},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1496,"y":1987,"w":47,"h":47},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":47,"h":47},
@@ -1978,11 +1306,7 @@
 },
 "sprites/wires/display/yellow.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1603,"y":1901,"w":47,"h":47},
-=======
-	"frame": {"x":1963,"y":1802,"w":47,"h":47},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1948,"y":1266,"w":47,"h":47},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":47,"h":47},
@@ -1990,11 +1314,7 @@
 },
 "sprites/wires/lever_on.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1935,"y":1744,"w":109,"h":127},
-=======
-	"frame": {"x":1934,"y":1589,"w":109,"h":127},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1721,"y":706,"w":101,"h":114},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":21,"y":10,"w":101,"h":114},
@@ -2002,7 +1322,7 @@
 },
 "sprites/wires/logical_acceptor.png":
 {
-	"frame": {"x":1981,"y":5,"w":62,"h":106},
+	"frame": {"x":1086,"y":604,"w":62,"h":106},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":43,"y":0,"w":62,"h":106},
@@ -2010,11 +1330,7 @@
 },
 "sprites/wires/logical_ejector.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1304,"y":1976,"w":60,"h":67},
-=======
-	"frame": {"x":1840,"y":1784,"w":60,"h":67},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1856,"y":920,"w":60,"h":67},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":44,"y":0,"w":60,"h":67},
@@ -2022,11 +1338,7 @@
 },
 "sprites/wires/network_conflict.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1656,"y":1901,"w":47,"h":44},
-=======
-	"frame": {"x":1968,"y":1196,"w":47,"h":44},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1948,"y":1319,"w":47,"h":44},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":2,"w":47,"h":44},
@@ -2034,11 +1346,7 @@
 },
 "sprites/wires/network_empty.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1732,"y":1846,"w":41,"h":48},
-=======
-	"frame": {"x":1472,"y":1266,"w":41,"h":48},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":2000,"y":587,"w":41,"h":48},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":0,"w":41,"h":48},
@@ -2046,63 +1354,15 @@
 },
 "sprites/wires/overlay_tile.png":
 {
-	"frame": {"x":1647,"y":1731,"w":96,"h":96},
+	"frame": {"x":1832,"y":496,"w":96,"h":96},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
 	"sourceSize": {"w":96,"h":96}
 },
-"sprites/wires/sets/color_cross.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":565,"y":835,"w":144,"h":144},
-=======
-	"frame": {"x":565,"y":694,"w":144,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/wires/sets/color_forward.png":
-{
-	"frame": {"x":1906,"y":1592,"w":18,"h":144},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":63,"y":0,"w":18,"h":144},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/wires/sets/color_split.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":565,"y":1072,"w":144,"h":81},
-=======
-	"frame": {"x":954,"y":1490,"w":144,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":63,"w":144,"h":81},
-	"sourceSize": {"w":144,"h":144}
-},
-"sprites/wires/sets/color_turn.png":
-{
-<<<<<<< HEAD
-	"frame": {"x":1405,"y":1753,"w":81,"h":81},
-=======
-	"frame": {"x":1649,"y":1835,"w":81,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":63,"y":63,"w":81,"h":81},
-	"sourceSize": {"w":144,"h":144}
-},
 "sprites/wires/sets/conflict_cross.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1146,"y":603,"w":144,"h":144},
-=======
-	"frame": {"x":566,"y":846,"w":144,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":521,"y":1461,"w":144,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
@@ -2110,11 +1370,7 @@
 },
 "sprites/wires/sets/conflict_forward.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":973,"y":1840,"w":18,"h":144},
-=======
-	"frame": {"x":1993,"y":119,"w":18,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1985,"y":6,"w":26,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":59,"y":0,"w":26,"h":144},
@@ -2122,11 +1378,7 @@
 },
 "sprites/wires/sets/conflict_split.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":645,"y":1460,"w":144,"h":81},
-=======
-	"frame": {"x":1310,"y":763,"w":144,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":831,"y":752,"w":144,"h":85},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":59,"w":144,"h":85},
@@ -2134,11 +1386,7 @@
 },
 "sprites/wires/sets/conflict_turn.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1304,"y":1889,"w":81,"h":81},
-=======
-	"frame": {"x":1649,"y":1924,"w":81,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1934,"y":496,"w":85,"h":85},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":59,"y":59,"w":85,"h":85},
@@ -2146,11 +1394,7 @@
 },
 "sprites/wires/sets/first_cross.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":561,"y":685,"w":144,"h":144},
-=======
-	"frame": {"x":1732,"y":460,"w":144,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":671,"y":1461,"w":144,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
@@ -2158,11 +1402,7 @@
 },
 "sprites/wires/sets/first_forward.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":2006,"y":1028,"w":18,"h":144},
-=======
-	"frame": {"x":1390,"y":1174,"w":18,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1000,"y":605,"w":26,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":59,"y":0,"w":26,"h":144},
@@ -2170,11 +1410,7 @@
 },
 "sprites/wires/sets/first_split.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":565,"y":985,"w":144,"h":81},
-=======
-	"frame": {"x":802,"y":1490,"w":144,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1891,"y":405,"w":144,"h":85},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":59,"w":144,"h":85},
@@ -2182,11 +1418,7 @@
 },
 "sprites/wires/sets/first_turn.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":997,"y":1921,"w":81,"h":81},
-=======
-	"frame": {"x":1751,"y":1729,"w":81,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1825,"y":598,"w":85,"h":85},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":59,"y":59,"w":85,"h":85},
@@ -2194,11 +1426,7 @@
 },
 "sprites/wires/sets/second_cross.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1296,"y":603,"w":144,"h":144},
-=======
-	"frame": {"x":1158,"y":612,"w":144,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":671,"y":1611,"w":144,"h":144},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":144},
@@ -2206,11 +1434,7 @@
 },
 "sprites/wires/sets/second_forward.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1975,"y":116,"w":18,"h":144},
-=======
-	"frame": {"x":2019,"y":119,"w":18,"h":144},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1816,"y":1674,"w":26,"h":144},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":59,"y":0,"w":26,"h":144},
@@ -2218,11 +1442,7 @@
 },
 "sprites/wires/sets/second_split.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":795,"y":1461,"w":144,"h":81},
-=======
-	"frame": {"x":1462,"y":763,"w":144,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1154,"y":601,"w":144,"h":85},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":59,"w":144,"h":85},
@@ -2230,11 +1450,7 @@
 },
 "sprites/wires/sets/second_turn.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1405,"y":1840,"w":81,"h":81},
-=======
-	"frame": {"x":1751,"y":1818,"w":81,"h":81},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1828,"y":689,"w":85,"h":85},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":59,"y":59,"w":85,"h":85},
@@ -2242,11 +1458,7 @@
 },
 "sprites/wires/wires_preview.png":
 {
-<<<<<<< HEAD
-	"frame": {"x":1247,"y":1673,"w":48,"h":48},
-=======
-	"frame": {"x":1416,"y":1266,"w":48,"h":48},
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"frame": {"x":1032,"y":658,"w":48,"h":48},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
@@ -2259,10 +1471,6 @@
 	"format": "RGBA8888",
 	"size": {"w":2048,"h":2048},
 	"scale": "0.75",
-<<<<<<< HEAD
-	"smartupdate": "$TexturePacker:SmartUpdate:c57f50d18c59efc0edbd4a3a732323a4:3fcf23da2ddc6370c437cf41f6d44ed0:908b89f5ca8ff73e331a35a3b14d0604$"
-=======
-	"smartupdate": "$TexturePacker:SmartUpdate:f21861f754636ac30e87fdbab4b77dbd:161fc7d539e5ffa693c8470dcc931f75:908b89f5ca8ff73e331a35a3b14d0604$"
->>>>>>> parent of 5f2cf4e... Improve color rendering performance
+	"smartupdate": "$TexturePacker:SmartUpdate:a1c027d325ef1c92a9318164b1241662:a9c9c3627ec9506697a7e24a7a287d67:908b89f5ca8ff73e331a35a3b14d0604$"
 }
 }
