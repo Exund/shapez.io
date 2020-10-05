@@ -290,8 +290,8 @@ export class LogicGateSystem extends GameSystemWithFilter {
         }
 
         const stackedShape = this.root.shapeDefinitionMgr.shapeActionStack(
-            /** @type {ShapeItem} */ (lowerItem).definition,
-            /** @type {ShapeItem} */ (upperItem).definition
+            /** @type {ShapeItem} */(lowerItem).definition,
+            /** @type {ShapeItem} */(upperItem).definition
         );
 
         return this.root.shapeDefinitionMgr.getShapeItemFromDefinition(stackedShape);
@@ -316,8 +316,8 @@ export class LogicGateSystem extends GameSystemWithFilter {
         }
 
         const coloredShape = this.root.shapeDefinitionMgr.shapeActionPaintWith(
-            /** @type {ShapeItem} */ (shape).definition,
-            /** @type {ColorItem} */ (color).color
+            /** @type {ShapeItem} */(shape).definition,
+            /** @type {ColorItem} */(color).color
         );
 
         return this.root.shapeDefinitionMgr.getShapeItemFromDefinition(coloredShape);
@@ -341,28 +341,8 @@ export class LogicGateSystem extends GameSystemWithFilter {
             return BOOL_FALSE_SINGLETON;
         }
 
-        switch (itemA.getItemType()) {
-            case "shape": {
-                return /** @type {ShapeItem} */ (itemA).definition.getHash() ===
-                    /** @type {ShapeItem} */ (itemB).definition.getHash()
-                    ? BOOL_TRUE_SINGLETON
-                    : BOOL_FALSE_SINGLETON;
-            }
-            case "color": {
-                return /** @type {ColorItem} */ (itemA).color === /** @type {ColorItem} */ (itemB).color
-                    ? BOOL_TRUE_SINGLETON
-                    : BOOL_FALSE_SINGLETON;
-            }
-
-            case "boolean": {
-                return /** @type {BooleanItem} */ (itemA).value === /** @type {BooleanItem} */ (itemB).value
-                    ? BOOL_TRUE_SINGLETON
-                    : BOOL_FALSE_SINGLETON;
-            }
-
-            default: {
-                assertAlways(false, "Bad item type: " + itemA.getItemType());
-            }
-        }
+        return itemA.equalsImpl(itemB)
+            ? BOOL_TRUE_SINGLETON
+            : BOOL_FALSE_SINGLETON;
     }
 }

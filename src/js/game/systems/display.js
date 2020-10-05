@@ -1,5 +1,6 @@
 import { globalConfig } from "../../core/config";
 import { Loader } from "../../core/loader";
+import { ModItem } from "../../GeoZ/main";
 import { BaseItem } from "../base_item";
 import { enumColors, enumColorsToHexCode } from "../colors";
 import { DisplayComponent } from "../components/display";
@@ -31,6 +32,10 @@ export class DisplaySystem extends GameSystemWithFilter {
     getDisplayItem(value) {
         if (!value) {
             return null;
+        }
+
+        if (value instanceof ModItem) {
+            return value.asDisplayItem();
         }
 
         switch (value.getItemType()) {
@@ -76,7 +81,10 @@ export class DisplaySystem extends GameSystemWithFilter {
                 }
 
                 const origin = entity.components.StaticMapEntity.origin;
-                if (value.getItemType() === "color") {
+
+                if (value instanceof ModItem) {
+                    value.drawOnDisplay({ system: this, origin, parameters });
+                } else if (value.getItemType() === "color") {
                     this.displaySprites[/** @type {ColorItem} */ (value).color].drawCachedCentered(
                         parameters,
                         (origin.x + 0.5) * globalConfig.tileSize,

@@ -3,6 +3,7 @@ import { THIRDPARTY_URLS } from "../../core/config";
 import { DialogWithForm } from "../../core/modal_dialog_elements";
 import { FormElementInput, FormElementItemChooser } from "../../core/modal_dialog_forms";
 import { fillInLinkIntoTranslation } from "../../core/utils";
+import { ModItems } from "../../GeoZ/main";
 import { T } from "../../translations";
 import { BaseItem } from "../base_item";
 import { enumColors } from "../colors";
@@ -158,6 +159,12 @@ export class ConstantSignalSystem extends GameSystemWithFilter {
 
         if (ShapeDefinition.isValidShortKey(code)) {
             return this.root.shapeDefinitionMgr.getShapeItemFromShortKey(code);
+        }
+
+        for (const key in ModItems) {
+            const item = ModItems[key];
+            const parsed = item.parseFromCode(code);
+            if (parsed) return parsed;
         }
 
         return null;

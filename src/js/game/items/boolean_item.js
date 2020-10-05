@@ -3,6 +3,7 @@ import { Loader } from "../../core/loader";
 import { types } from "../../savegame/serialization";
 import { BaseItem } from "../base_item";
 import { globalConfig } from "../../core/config";
+import { ModItem } from "../../GeoZ/main";
 
 export class BooleanItem extends BaseItem {
     static getId() {
@@ -104,6 +105,10 @@ export function isTruthyItem(item) {
 
     if (item.getItemType() === "boolean") {
         return !!(/** @type {BooleanItem} */ (item).value);
+    }
+
+    if (item instanceof ModItem) {
+        return item.asBoolean();
     }
 
     return true;

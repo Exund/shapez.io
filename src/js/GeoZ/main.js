@@ -14,7 +14,7 @@ import { GameCore } from "../game/core";
 import { createLogger } from "../core/logging";
 import { registerBuildingVariant } from "../game/building_codes";
 import { supportedBuildings } from "../game/hud/parts/buildings_toolbar";
-import { KEYMAPPINGS, key } from "../game/key_action_mapper";
+import { KEYMAPPINGS } from "../game/key_action_mapper";
 import { T } from "../translations";
 import { ShapeData, allShapeData, initShapes } from "../game/shapes";
 import { globalConfig } from "../core/config";
@@ -55,8 +55,8 @@ export const ModProcessors = {};
 /** @type {Object.<string, typeof ModWireProcessor>} */
 export const ModWireProcessors = {};
 
-/** @type {Array<typeof ModItem>} */
-export const ModItems = [];
+/** @type {Object.<string, typeof ModItem>} */
+export const ModItems = {};
 
 /** @type {Array<typeof MetaModBuilding>} */
 export const ModBuildings = [];
@@ -68,16 +68,8 @@ export const ModShapes = [];
 const webpack_require = require.context("../", true, /\.js$/);
 
 const GeoZ = {
-    Classes: {
-        MetaModBuilding,
-        ModComponent,
-        ModItem,
-        ModProcessor,
-        ModSystem,
-        ModSystemWithFilter,
-    },
-
     require(module) {
+        // @ts-ignore
         return webpack_require(`./${module}.js`);
     },
 };
@@ -98,6 +90,7 @@ export async function initMods() {
     // @ts-ignore
     const local_mods = require.context("./mods", true, /.*\.mod\.js/i);
     for (let key of local_mods.keys()) {
+        // @ts-ignore
         let mod = /** @type {Mod} */ (local_mods(key).default);
         if (mod.name) {
             Mods.push(mod);
@@ -169,7 +162,7 @@ export async function initMods() {
         if (mod.items) {
             mod_infos += `${mod.items.length} items, `;
             for (const item of mod.items) {
-                ModItems.push(item);
+                ModItems[item.getId()] = item;
                 gItemRegistry.register(item);
             }
         }

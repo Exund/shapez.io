@@ -321,32 +321,12 @@ class XNORGate extends ModWireProcessor {
     }
 }
 
-class VirtualStacker extends ModWireProcessor {
-    /**
-     * @param {Array<BaseItem|null>} parameters
-     * @param {LogicGateSystem} system
-     * @returns {Array<BaseItem>|BaseItem}
-     */
-    static compute(system, parameters) {
-        const item1 = parameters[0];
-        const item2 = parameters[0];
-        if (!item1 || !item2 || item1.getItemType() !== "shape" || item2.getItemType() !== "shape") {
-            return null;
-        }
-
-        const definition1 = /** @type {ShapeItem} */ (item1).definition;
-        const definition2 = /** @type {ShapeItem} */ (item2).definition;
-        const result = system.root.shapeDefinitionMgr.shapeActionStack(definition1, definition2);
-        return system.root.shapeDefinitionMgr.getShapeItemFromDefinition(result);
-    }
-}
-
 /**@type {GeoZ.Mod}*/
 const test = {
     name: "test",
     buildings: [MetaTestBuilding, MetaInvertedGatesBuilding],
     processors: [SquareConverter],
-    wireProcessors: [NANDGate, NORGate, XNORGate, VirtualStacker],
+    wireProcessors: [NANDGate, NORGate, XNORGate],
     shapes: [
         {
             id: "leaf",

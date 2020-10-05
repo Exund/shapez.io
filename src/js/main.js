@@ -53,6 +53,8 @@ function bootApp() {
     logger.log("Page Loaded");
     app = new Application();
     app.boot();
+    //@ts-ignore
+    window.app = app;
 }
 
 window.addEventListener("load", bootApp);

@@ -22,7 +22,7 @@ export class BaseItem extends BasicSerializableObject {
         return {};
     }
 
-    /** @returns {ItemType} **/
+    /** @returns {string} **/
     getItemType() {
         abstract;
         return "shape";
