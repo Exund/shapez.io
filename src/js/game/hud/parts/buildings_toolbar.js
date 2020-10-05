@@ -16,6 +16,7 @@ import { HUDBaseToolbar } from "./base_toolbar";
 import { MetaStorageBuilding } from "../../buildings/storage";
 import { MetaItemProducerBuilding } from "../../buildings/item_producer";
 import { queryParamOptions } from "../../../core/query_parameters";
+import { MetaBuilding } from "../../meta_building";
 
 /**
  * @type {Array<typeof MetaBuilding>}
