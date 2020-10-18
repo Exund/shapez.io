@@ -3,11 +3,11 @@ import { RandomNumberGenerator } from "../core/rng";
 import { clamp } from "../core/utils";
 import { BasicSerializableObject, types } from "../savegame/serialization";
 import { enumColors } from "./colors";
-import { allShapeData } from "./shapes";
+import { allShapeData, enumSubShape } from "./shapes";
 import { enumItemProcessorTypes } from "./components/item_processor";
 import { enumAnalyticsDataSource } from "./production_analytics";
 import { GameRoot } from "./root";
-import { enumSubShape, ShapeDefinition } from "./shape_definition";
+import { ShapeDefinition } from "./shape_definition";
 import { enumHubGoalRewards } from "./tutorial_goals";
 import { ModProcessors } from "../GeoZ/main";
 
@@ -435,7 +435,7 @@ export class HubGoals extends BasicSerializableObject {
         let anyIsMissingTwo = false;
 
         for (let i = 0; i < layerCount; ++i) {
-            /** @type {ShapeLayer} */
+            /** @type {import("./shape_definition").ShapeLayer} */
             const layer = [null, null, null, null];
 
             for (let j = 0; j < pickedSymmetry.length; ++j) {

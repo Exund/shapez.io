@@ -88,17 +88,23 @@ export async function initMods() {
     window.GeoZ = GeoZ;
 
     // @ts-ignore
-    const local_mods = require.context("./mods", true, /.*\.mod\.js/i);
-    for (let key of local_mods.keys()) {
+    const internal_mods = require.context("./mods", true, /.*\.mod\.js/i);
+    for (let key of internal_mods.keys()) {
         // @ts-ignore
-        let mod = /** @type {Mod} */ (local_mods(key).default);
+        let mod = /** @type {Mod} */ (internal_mods(key).default);
         if (mod.name) {
             Mods.push(mod);
         }
     }
 
-    const local_mods_count = Mods.length;
-    logger.log(`${local_mods_count} local mods found`);
+    const internal_mods_count = Mods.length;
+    logger.log(`${internal_mods_count} internal mods loaded`);
+
+    if (G_IS_STANDALONE) {
+        const fs = require("fs");
+        console.log(fs);
+        console.log(process.cwd());
+    }
 
     /** @type {Array<string>} */
     let external_mods = [];
@@ -122,8 +128,8 @@ export async function initMods() {
         }
     }
 
-    const external_mods_count = Mods.length - local_mods_count;
-    logger.log(`${external_mods_count} external mods found`);
+    const external_mods_count = Mods.length - internal_mods_count;
+    logger.log(`${external_mods_count} external mods loaded`);
 
     for (const mod of Mods) {
         let mod_infos = `${mod.name} : `;

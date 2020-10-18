@@ -91,34 +91,34 @@ function createWindow() {
 
     win.on("", handleWindowBeforeunload);
 
-    if (isDev) {
-        menu = new Menu();
+    //if (isDev) {
+    menu = new Menu();
 
-        const mainItem = new MenuItem({
-            label: "Toggle Dev Tools",
-            click: () => win.toggleDevTools(),
-            accelerator: "F12",
-        });
-        menu.append(mainItem);
+    const mainItem = new MenuItem({
+        label: "Toggle Dev Tools",
+        click: () => win.toggleDevTools(),
+        accelerator: "F12",
+    });
+    menu.append(mainItem);
 
-        const reloadItem = new MenuItem({
-            label: "Restart",
-            click: () => win.reload(),
-            accelerator: "F5",
-        });
-        menu.append(reloadItem);
+    const reloadItem = new MenuItem({
+        label: "Restart",
+        click: () => win.reload(),
+        accelerator: "F5",
+    });
+    menu.append(reloadItem);
 
-        const fullscreenItem = new MenuItem({
-            label: "Fullscreen",
-            click: () => win.setFullScreen(!win.isFullScreen()),
-            accelerator: "F11",
-        });
-        menu.append(fullscreenItem);
+    const fullscreenItem = new MenuItem({
+        label: "Fullscreen",
+        click: () => win.setFullScreen(!win.isFullScreen()),
+        accelerator: "F11",
+    });
+    menu.append(fullscreenItem);
 
-        Menu.setApplicationMenu(menu);
-    } else {
+    Menu.setApplicationMenu(menu);
+    /*} else {
         Menu.setApplicationMenu(null);
-    }
+    }*/
 
     win.once("ready-to-show", () => {
         win.show();
